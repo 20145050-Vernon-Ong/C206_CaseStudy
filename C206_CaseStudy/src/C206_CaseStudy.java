@@ -18,11 +18,15 @@ public class C206_CaseStudy {
 		Helper.line(30, "=");
 		System.out.println("1.");
 		System.out.println("2.");
-		System.out.println("3. Quit");
+		System.out.println("3. Go to Login Page");
 	}
 	
 	private static void LoginMenu() {
-		
+		Helper.line(30, "=");
+		System.out.println("CCA Registration System");
+		Helper.line(30, "=");
+		System.out.println("1. Login");
+		System.out.println("2. Quit");
 	}
 
 }
