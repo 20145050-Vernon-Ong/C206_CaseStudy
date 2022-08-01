@@ -5,5 +5,11 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 
 	}
+	
+	private static void Menu() {
+		Helper.line("=", 50);
+		System.out.println("CCA Registration System");
+		Helper.line("=", 50);
+	}
 
 }
