@@ -7,7 +7,7 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		int option = 0;
 		
-		while (option != 3) {
+		while (option != 2) {
 			LoginMenu();
 			option = Helper.readInt("Enter option > ");
 		}
