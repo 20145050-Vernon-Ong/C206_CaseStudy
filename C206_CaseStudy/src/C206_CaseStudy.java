@@ -6,7 +6,7 @@ public class C206_CaseStudy {
 		int option = 0;
 		
 		while (option != 3) {
-			Menu();
+			LoginMenu();
 			option = Helper.readInt("Enter option > ");
 		}
 		
@@ -19,6 +19,10 @@ public class C206_CaseStudy {
 		System.out.println("1.");
 		System.out.println("2.");
 		System.out.println("3. Quit");
+	}
+	
+	private static void LoginMenu() {
+		
 	}
 
 }
