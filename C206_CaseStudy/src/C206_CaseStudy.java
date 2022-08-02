@@ -117,7 +117,7 @@ public class C206_CaseStudy {
 			if (option == 1) {
 				addStudent();
 			} else if (option == 2) {
-				
+				viewStudent();
 			} else if (option == 3) {
 				
 			} else {
@@ -148,6 +148,27 @@ public class C206_CaseStudy {
 		} else {
 			System.out.println("Invalid Grade");
 		}
+		
+	}
+	
+	private void viewStudent() {
+		
+		String output = String.format("%-10s %-10s %-10s %s\n", "Name", "Student ID", "Grade", "Class Room");
+		for (Student s : studentList) {
+			if (s.getGrade() >= 4 && s.getGrade() <= 6) {
+				output += String.format("%-10s %-10d %-10d %s\n", 
+						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom());
+			} else if (s.getGrade() <= 3 && s.getGrade() >= 1) {
+				output += String.format("%-10s %-10d %-10d %-10s %-10s %-10s %d\n", 
+						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom(),
+						s.getParentName(), s.getParentEmail(), s.getContactNo());
+			}
+		}
+		
+		System.out.println(output);
+	}
+	
+	private void deleteStudent() {
 		
 	}
 	
