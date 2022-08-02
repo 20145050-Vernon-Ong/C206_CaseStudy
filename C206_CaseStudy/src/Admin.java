@@ -18,7 +18,7 @@ public class Admin {
 	}
 	
 	public boolean login(String name, String password) {
-		if (this.name == name && this.password == password) {
+		if (name.equals(getName()) && password.equals(getPassword())) {
 			return true;
 		} else {
 			return false;
