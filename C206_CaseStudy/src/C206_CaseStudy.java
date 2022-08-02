@@ -4,12 +4,17 @@ public class C206_CaseStudy {
 	
 	ArrayList<Admin> adminList = new ArrayList<Admin>();
 
-	adminList.add(new Admin("Vernon Ong", "verC206DIT"));
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int option = -1;
+		C206_CaseStudy starting = new C206_CaseStudy();
+		starting.start();
+	}
+	
+	private void start() {
 		
+		adminList.add(new Admin("Vernon Ong", "verC206DIT"));
+		
+		int option = -1;
 		while (option != 2) {
 			Admin login = getLoginAccount(adminList);
 			if (login != null) {
@@ -17,7 +22,6 @@ public class C206_CaseStudy {
 			}
 			option = Helper.readInt("Enter password > ");
 		}
-		
 	}
 	
 	private static void Menu() {
