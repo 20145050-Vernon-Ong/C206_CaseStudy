@@ -4,9 +4,11 @@ public class C206_CaseStudy {
 	
 	ArrayList<Admin> adminList = new ArrayList<Admin>();
 
+	adminList.add(new Admin("Vernon Ong", "verC206DIT"));
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int option = 0;
+		int option = -1;
 		
 		while (option != 2) {
 			Admin login = getLoginAccount(adminList);
