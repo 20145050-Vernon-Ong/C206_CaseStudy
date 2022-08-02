@@ -59,18 +59,22 @@ public class C206_CaseStudy {
 			memberOption = Helper.readInt("Enter choice > ");
 
 			if (memberOption == 1) {
-
 				//Write code here to perform a deposit transaction.
 				//C206_CaseStudy
-
+				
 			} else if (memberOption == 2) {
 				//Write code here to perform a withdrawal transaction.
 				//C206_CaseStudy
 
 			} else if (memberOption == 3) {
 				//Write code here to display user's info.
-				//loginAcct.display();			
+				//loginAcct.display();	
+				
 			} else if (memberOption == 4) {
+				
+			} else if (memberOption == 5) {
+				
+			} else if (memberOption == 6) {
 				System.out.println("Logging out.");
 			} else {
 				System.out.println("Invalid Option");
@@ -91,6 +95,18 @@ public class C206_CaseStudy {
 
 
 		return loginAccount;
+	}
+	
+	private void StudentPage() {
+		int option = -1;
+		
+		while (option != 4) {
+			System.out.println("1. Add Student");
+			System.out.println("2. view Student");
+			System.out.println("3. Delete Student");
+			System.out.println("4. Go to Main Page");
+			option = Helper.readInt("Enter option > ");
+		}
 	}
 
 }
