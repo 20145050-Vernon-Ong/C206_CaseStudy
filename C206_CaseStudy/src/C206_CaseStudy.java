@@ -66,11 +66,16 @@ public class C206_CaseStudy {
 			String enterName = Helper.readString("Enter Name > ");
 			String enterPass = Helper.readString("Enter password > ");
 			for (Admin a : adminList) {
-				if (a.lo)
+				if (a.login(enterName, enterPass) == true) {
+					loginAccount = a;
+					System.out.println("Logged In");
+					break;
+				}
 			}
 			
 			
 		}
+		return loginAccount;
 	}
 
 }
