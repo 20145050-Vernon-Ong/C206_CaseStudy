@@ -128,10 +128,27 @@ public class C206_CaseStudy {
 		
 	}
 	
-	private void addStudent() {
-		for (Student s : studentList) {
-			
+	private void addStudent() {	
+		int addGrade = Helper.readInt("Add Grade >");
+		
+		if (addGrade >= 4 && addGrade <= 6) {
+			String addName = Helper.readString("Add Student Name > ");
+			int addStudentID = Helper.readInt("Add Student ID > ");
+			String classRoom = Helper.readString("Add ClassRoom > ");
+			studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
+		} else if (addGrade <= 3 && addGrade >= 1) {
+			String addName = Helper.readString("Add Student Name > ");
+			int addStudentID = Helper.readInt("Add Student ID > ");
+			String classRoom = Helper.readString("Add ClassRoom > ");
+			String addParent = Helper.readString("Add Parent Name > ");
+			String addEmail = Helper.readString("Add Parent Email > ");
+			int contact = Helper.readInt("Add Contact Number > ");
+			studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
+					addParent, addEmail, contact));
+		} else {
+			System.out.println("Invalid Grade");
 		}
+		
 	}
 	
 
