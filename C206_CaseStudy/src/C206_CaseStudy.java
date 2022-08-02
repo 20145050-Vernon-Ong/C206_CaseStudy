@@ -35,9 +35,12 @@ public class C206_CaseStudy {
 		Helper.line(30, "=");
 		System.out.println("CCA Registration System");
 		Helper.line(30, "=");
-		System.out.println("1.");
-		System.out.println("2.");
-		System.out.println("3. Go to Login Page");
+		System.out.println("1. Go to Student Page");
+		System.out.println("2. Go to CCA Page");
+		System.out.println("3. Go to CCA Category Page");
+		System.out.println("4. Go to Paretns Page");
+		System.out.println("5. Go to Student Registered Page");
+		System.out.println("6. Go to Login Page");
 	}
 
 	private static void LoginMenu() {
@@ -51,7 +54,7 @@ public class C206_CaseStudy {
 	private static void runSavingsProcess(Admin loginAccount) {
 		int memberOption = -1;
 
-		while (memberOption != 4) {
+		while (memberOption != 6) {
 			Menu();
 			memberOption = Helper.readInt("Enter choice > ");
 
@@ -82,7 +85,6 @@ public class C206_CaseStudy {
 		for (Admin a : adminList) {
 			if (a.login(enterName, enterPass) == true) {
 				loginAccount = a;
-				System.out.println("Logged In");
 				break;
 			}
 		}
