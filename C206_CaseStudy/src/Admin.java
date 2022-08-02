@@ -17,4 +17,12 @@ public class Admin {
 		return password;
 	}
 	
+	public boolean login(String name, String password) {
+		if (this.name == name && this.password == password) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 }
