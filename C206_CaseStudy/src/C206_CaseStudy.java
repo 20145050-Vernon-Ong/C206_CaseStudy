@@ -61,7 +61,7 @@ public class C206_CaseStudy {
 			if (memberOption == 1) {
 				//Write code here to perform a deposit transaction.
 				//C206_CaseStudy
-				
+				StudentPage();
 			} else if (memberOption == 2) {
 				//Write code here to perform a withdrawal transaction.
 				//C206_CaseStudy
@@ -93,11 +93,10 @@ public class C206_CaseStudy {
 			}
 		}
 
-
 		return loginAccount;
 	}
 	
-	private void StudentPage() {
+	private static void StudentPage() {
 		int option = -1;
 		
 		while (option != 4) {
