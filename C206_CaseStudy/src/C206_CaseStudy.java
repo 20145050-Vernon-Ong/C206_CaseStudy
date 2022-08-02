@@ -27,7 +27,7 @@ public class C206_CaseStudy {
 			if (option == 1) {
 				Admin login = getLoginAccount(adminList);
 				if (login != null) {
-					C206_CaseStudy.runSavingsProcess(login);
+					runSavingsProcess(login);
 				}
 			} else if (option == 2) {
 				System.out.println("Closing...");
@@ -57,7 +57,7 @@ public class C206_CaseStudy {
 		System.out.println("2. Quit");
 	}
 
-	private static void runSavingsProcess(Admin loginAccount) {
+	private void runSavingsProcess(Admin loginAccount) {
 		int memberOption = -1;
 
 		while (memberOption != 6) {
@@ -102,7 +102,7 @@ public class C206_CaseStudy {
 		return loginAccount;
 	}
 	
-	private static void StudentPage() {
+	private void StudentPage() {
 		int option = -1;
 		
 		while (option != 4) {
@@ -128,8 +128,10 @@ public class C206_CaseStudy {
 		
 	}
 	
-	private static void addStudent() {
-		
+	private void addStudent() {
+		for (Student s : studentList) {
+			
+		}
 	}
 	
 
