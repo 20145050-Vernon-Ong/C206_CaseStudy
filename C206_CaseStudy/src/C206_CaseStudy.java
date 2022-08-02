@@ -3,6 +3,12 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	ArrayList<Admin> adminList = new ArrayList<Admin>();
+	
+	ArrayList<Student> studentList = new ArrayList<Student>();
+	
+	ArrayList<Parents> parentList = new ArrayList<Parents>();
+	
+	ArrayList<CCA> ccaList = new ArrayList<CCA>();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -100,12 +106,31 @@ public class C206_CaseStudy {
 		int option = -1;
 		
 		while (option != 4) {
+			Helper.line(30, "=");
+			System.out.println("STUDENT PAGE");
+			Helper.line(30, "=");
 			System.out.println("1. Add Student");
 			System.out.println("2. view Student");
 			System.out.println("3. Delete Student");
 			System.out.println("4. Go to Main Page");
 			option = Helper.readInt("Enter option > ");
+			if (option == 1) {
+				addStudent();
+			} else if (option == 2) {
+				
+			} else if (option == 3) {
+				
+			} else {
+				System.out.println("Invalid Option");
+			}
 		}
+		
+		
 	}
+	
+	private static void addStudent() {
+		
+	}
+	
 
 }
