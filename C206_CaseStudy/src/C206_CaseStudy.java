@@ -19,17 +19,14 @@ public class C206_CaseStudy {
 	private void start() {
 
 		adminList.add(new Admin("Vernon Ong", "verC206DIT"));
+		studentList.add(new Student("Earnest", 2003, 4, "C206"));
 
 		int option = -1;
 		while (option != 2) {
 			LoginMenu();
 			option = Helper.readInt("Enter option > ");
 			if (option == 1) {
-				ASPMenu();
-				Admin login = getLoginAccount(adminList);
-				if (login != null) {
-					runSavingsProcess(login);
-				}
+				secondStart();
 			} else if (option == 2) {
 				System.out.println("Closing...");
 			} else {
@@ -38,14 +35,42 @@ public class C206_CaseStudy {
 		}
 	}
 	
+	private void secondStart() {
+		int secondOption = -1;
+		while (secondOption != 4) {
+			ASPMenu();
+			secondOption = Helper.readInt("Enter option > ");
+			if (secondOption == 1) {
+				Admin login = getLoginAccount(adminList);
+				if (login != null) {
+					runSavingsProcess(login);
+				}
+			} else if (secondOption == 2) {
+				Student loginStud = getStudAccount(studentList);
+				if (loginStud != null) {
+					runSavingStudentProcess(loginStud);
+				}
+			} else if (secondOption == 3) {
+				
+			} else if (secondOption == 4) {
+				
+			} else {
+				System.out.println("Invalid Option > ");
+			}
+		}
+	}
+	
 	private static void ASPMenu() {
+		Helper.line(30, "=");
+		System.out.println("Logging Page");
+		Helper.line(30, "=");
 		System.out.println("1. Login as Admin");
 		System.out.println("2. Login as Student (For P4 and above)");
 		System.out.println("3. Login as Parents (For P3 and below)");
-		System.out.println("4. Go back to Login Page");
+		System.out.println("4. Go back to Main Page");
 	}
 
-	private static void Menu() {
+	private static void AdminMenu() {
 		Helper.line(30, "=");
 		System.out.println("CCA Registration System");
 		Helper.line(30, "=");
@@ -55,6 +80,15 @@ public class C206_CaseStudy {
 		System.out.println("4. Go to Paretns Page");
 		System.out.println("5. Go to Student Registered Page");
 		System.out.println("6. Go to Login Page");
+	}
+	
+	private static void StudentMenu() {
+		Helper.line(30, "=");
+		System.out.println("CCA Registration System");
+		Helper.line(30, "=");
+		System.out.println("1. Go to view CCA");
+		System.out.println("2. Register for CCA");
+		System.out.println("3. Go to Login Page");
 	}
 
 	private static void LoginMenu() {
@@ -67,22 +101,17 @@ public class C206_CaseStudy {
 
 	private void runSavingsProcess(Admin loginAccount) {
 		int memberOption = -1;
-
+		
 		while (memberOption != 6) {
-			Menu();
 			memberOption = Helper.readInt("Enter choice > ");
 
 			if (memberOption == 1) {
-				//Write code here to perform a deposit transaction.
-				//C206_CaseStudy
 				StudentPage();
 			} else if (memberOption == 2) {
-				//Write code here to perform a withdrawal transaction.
-				//C206_CaseStudy
+				
 
 			} else if (memberOption == 3) {
-				//Write code here to display user's info.
-				//loginAcct.display();	
+				
 				
 			} else if (memberOption == 4) {
 				
@@ -95,39 +124,54 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+	
+	private void runSavingStudentProcess(Student loginAccount) {
+		int memberOption = -1;
+		
+		while (memberOption != 3) {
+			memberOption = Helper.readInt("Enter choice > ");
+			if (memberOption == 1) {
+
+			} else if (memberOption == 2) {
+				
+
+			} else if (memberOption == 3) {
+				System.out.println("Logging out.");
+			} else {
+				System.out.println("Invalid Option");
+			}
+		}
+	}
 
 	private static Admin getLoginAccount(ArrayList<Admin> adminList) {
 		Admin loginAccount = null;
-		int enterOption = Helper.readInt("Enter Option > ");
 		for (Admin a : adminList) {
-			while (enterOption != 4) {
-				String enterName = Helper.readString("Enter Name > ");
-				String enterPass = Helper.readString("Enter password > ");
-				if (enterOption == 1) {
-					if (a.login(enterName, enterPass) == true) {
-						loginAccount = a;
-						break;
-					}
-				} else if (enterOption == 2) {
-					if (a.login(enterName, enterPass) == true) {
-						loginAccount = a;
-						break;
-					}
-				} else if (enterOption == 3) {
-					if (a.login(enterName, enterPass) == true) {
-						loginAccount = a;
-						break;
-					}	
-				} else if (enterOption == 4){
-				
-				} else {
-					System.out.println("Invalid Option");
-				}
-			}
+			String enterName = Helper.readString("Enter Name > ");
+			String enterPass = Helper.readString("Enter password > ");
+			if (a.login(enterName, enterPass) == true) {
+				loginAccount = a;
+				AdminMenu();
+				break;	
+			}			
 		}	
 		return loginAccount;
 	}
 	
+	private static Student getStudAccount(ArrayList<Student> studentList) {
+		Student loginAccount = null;
+		for (Student s : studentList) {
+			String enterName = Helper.readString("Enter Name > ");
+			int enterID = Helper.readInt("Enter Student ID > ");
+			if (s.login(enterName, enterID) == true) {
+				loginAccount = s;
+				StudentMenu();
+				break;	
+			}
+		}
+		return loginAccount;
+		
+	}
+	// Student Section
 	private void StudentPage() {
 		int option = -1;
 		
@@ -146,6 +190,8 @@ public class C206_CaseStudy {
 				viewStudent();
 			} else if (option == 3) {
 				
+			} else if (option == 4){
+				AdminMenu();
 			} else {
 				System.out.println("Invalid Option");
 			}
@@ -197,6 +243,8 @@ public class C206_CaseStudy {
 	private void deleteStudent() {
 		
 	}
+	
+	// CCA Section
 	
 
 }

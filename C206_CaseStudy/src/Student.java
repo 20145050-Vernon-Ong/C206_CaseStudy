@@ -58,5 +58,12 @@ public class Student {
 		this.contactNo = contactNo;
 	}
 	
+	public boolean login(String name, int ID) {
+		if (name.equals(getName()) && ID == getStudentID()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }
