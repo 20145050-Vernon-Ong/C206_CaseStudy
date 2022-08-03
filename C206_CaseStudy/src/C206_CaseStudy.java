@@ -25,6 +25,7 @@ public class C206_CaseStudy {
 			LoginMenu();
 			option = Helper.readInt("Enter option > ");
 			if (option == 1) {
+				ASPMenu();
 				Admin login = getLoginAccount(adminList);
 				if (login != null) {
 					runSavingsProcess(login);
@@ -35,6 +36,13 @@ public class C206_CaseStudy {
 				System.out.println("Invalid Option.");
 			}
 		}
+	}
+	
+	private static void ASPMenu() {
+		System.out.println("1. Login as Admin");
+		System.out.println("2. Login as Student (For P4 and above)");
+		System.out.println("3. Login as Parents (For P3 and below)");
+		System.out.println("4. Go back to Login Page");
 	}
 
 	private static void Menu() {
@@ -90,15 +98,33 @@ public class C206_CaseStudy {
 
 	private static Admin getLoginAccount(ArrayList<Admin> adminList) {
 		Admin loginAccount = null;
-		String enterName = Helper.readString("Enter Name > ");
-		String enterPass = Helper.readString("Enter password > ");
+		int enterOption = Helper.readInt("Enter Option > ");
 		for (Admin a : adminList) {
-			if (a.login(enterName, enterPass) == true) {
-				loginAccount = a;
-				break;
+			while (enterOption != 4) {
+				String enterName = Helper.readString("Enter Name > ");
+				String enterPass = Helper.readString("Enter password > ");
+				if (enterOption == 1) {
+					if (a.login(enterName, enterPass) == true) {
+						loginAccount = a;
+						break;
+					}
+				} else if (enterOption == 2) {
+					if (a.login(enterName, enterPass) == true) {
+						loginAccount = a;
+						break;
+					}
+				} else if (enterOption == 3) {
+					if (a.login(enterName, enterPass) == true) {
+						loginAccount = a;
+						break;
+					}	
+				} else if (enterOption == 4){
+				
+				} else {
+					System.out.println("Invalid Option");
+				}
 			}
-		}
-
+		}	
 		return loginAccount;
 	}
 	
