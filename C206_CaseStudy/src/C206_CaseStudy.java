@@ -9,6 +9,7 @@ public class C206_CaseStudy {
 	ArrayList<Parents> parentList = new ArrayList<Parents>();
 	
 	ArrayList<CCA> ccaList = new ArrayList<CCA>();
+	static ArrayList<StudentinCCA> studentincca = new ArrayList<StudentinCCA>();
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -249,6 +250,24 @@ public class C206_CaseStudy {
 	}
 	
 	// CCA Section
-	
+	public static void addStudentinCCA() {
+		// TODO Auto-generated method stub
+		// for students with cca
+		String name = Helper.readString("Enter name > ");
+		int studentID = Helper.readInt("Enter student ID > ");
+		int grade = Helper.readInt("Enter grade > ");
+		String cca = Helper.readString("Enter CCA");
+		String classRoom = Helper.readString("Enter classroom > ");
+		studentincca.add(new StudentinCCA(name, studentID, grade, classRoom, cca));
+	}
+	public static void viewStudentinCCA() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < studentincca.size(); i++){
+			System.out.println(studentincca.get(i));
+			
+		}
+		
 
+
+}
 }

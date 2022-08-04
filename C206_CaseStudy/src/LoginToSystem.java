@@ -3,7 +3,8 @@ public class LoginToSystem {
 
 	public static void main(String[] args) {
 	}
-	 static ArrayList<Student> students = new ArrayList<Student>(); //create array list
+	static ArrayList<StudentinCCA> studentincca = new ArrayList<StudentinCCA>();
+
 
 		// TODO Auto-generated method stub
 
@@ -47,13 +48,14 @@ public class LoginToSystem {
 			String name = Helper.readString("Enter name > ");
 			int studentID = Helper.readInt("Enter student ID > ");
 			int grade = Helper.readInt("Enter grade > ");
+			String cca = Helper.readString("Enter CCA");
 			String classRoom = Helper.readString("Enter classroom > ");
-			students.add(new Student(name, studentID, grade, classRoom));
+			studentincca.add(new StudentinCCA(name, studentID, grade, classRoom, cca));
 		}
 		public static void viewStudent() {
 			// TODO Auto-generated method stub
-			for (int i = 0; i < students.size(); i++){
-				System.out.println(students.get(i));
+			for (int i = 0; i < studentincca.size(); i++){
+				System.out.println(studentincca.get(i));
 			}
 
 
