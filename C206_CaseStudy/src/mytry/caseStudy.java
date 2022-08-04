@@ -12,7 +12,10 @@ public class caseStudy {
     ArrayList<CCA> ccaList = new ArrayList<CCA>(); 
     ArrayList<Parent> ParentList= new ArrayList<Parent>();
     
-  
+    static Admin loginAdmin;
+    static ccaCoordinator loginCCAUser;
+    static Student loginStudentt;
+    static Parent loginParent;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		caseStudy starting = new caseStudy(); 
@@ -21,16 +24,16 @@ public class caseStudy {
 	private void start() { 
 		 
 	       adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
-	       //studentList.add(new Student("Earnest", 2003, 4, "C206")); 
+	       studentList.add(new Student("Earnest", 2003, 4, "C206", "")); 
 	       ccaCordinatorList.add(new ccaCoordinator("Pearlyn", "Muay Thai", "pear3002"));
 	       ccaList.add(new CCA("BasketBall", "Sports", "BasketBall is a 10 player game", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn"));
-	 
+	       ParentList.add(new Parent(21000,"ang",3,"e65h","annie","qwer@asd.com",98765432));
 	       int option = -1; 
 	       while (option != 2) { 
 	    	   LoginMenu(); 
 	    	   option = Helper.readInt("Enter option > "); 
 	    	   if (option == 1) { 
-	    		  // secondStart(); 
+	    		  secondStart(); 
 	    		   } else if (option == 2) { 
 	    			   System.out.println("Closing...");
 	    		   } else { 
@@ -38,42 +41,66 @@ public class caseStudy {
 	    		   } 
 	      } 
 	     } 
-	    //edit this portion
-//	    private void secondStart() { 
-//	    	int secondOption = -1; 
-//	    	while (secondOption != 7) { 
-//	    		ASPMenu(); 
-//	    	    secondOption = Helper.readInt("Enter option > "); 
-//	    	    if (secondOption == 1) { 
-//	    	        Admin login = loginAdmin(adminList); 
-//	    	        if (login != null) { 
-//	    	             runSavingsProcess(login); 
-//	    	        } 
-//	    	    } else if (secondOption == 2) { 
-//	    	         ccaCoordinator loginCordinator = loginCCAcoord(ccaCordinatorList); 
-//	    	         if (loginCordinator != null) { 
-//	    	             runSavingCordinatorProcess(loginCordinator); 
-//	    	         }  
-//	    	   } else if (secondOption == 3) { 
-//	    		   Student loginStud = loginStudent(studentList); 
-//	    		   if (loginStud != null) { 
-//	       	             runSavingStudentProcess(loginStud); 
-//	       	       } 
-//	    	   } else if (secondOption == 4) { 
-//	    	       Student loginPar = loginParent(ParentList); 
-//	    	       if (loginPar != null) { 
-//	    	             runSavingParentProcess(loginPar); 
-//	    	       } 
-//	    	   } else if (secondOption == 5) { 
-//	    	  
-//	    	   } else if (secondOption == 7) { 
-//	    	     
-//	    	   } else { 
-//	    	    System.out.println("Invalid Option > "); 
-//	    	   } 
-//	     } 
-//	   } 
-	  
+	   
+	private void secondStart() { 
+		int secondOption = -1; 
+		while (secondOption != 7) { 
+			ASPMenu(); 
+			secondOption = Helper.readInt("Enter option > "); 
+			if (secondOption == 1) { 
+				String user = Helper.readString("Enter username > ");
+				String pass = Helper.readString("Enter password > ");
+				boolean flag = loginAdmin(adminList,user,pass); ;
+				if (flag && loginAdmin != null) {
+					
+					runSavingsProcess(loginAdmin); 
+					
+				}  
+			} 
+			else if (secondOption == 2) { 
+				String user = Helper.readString("Enter Name > ");
+				String pass = Helper.readString("Enter password > ");
+				boolean flag = loginCCAcoord(ccaCordinatorList,user,pass);
+				if (flag && loginCCAUser != null) {
+					
+					runSavingCordinatorProcess(loginCCAUser); 
+				}
+			}
+			else if (secondOption == 3) { 
+				String user = Helper.readString("Enter Name > ");
+				int pass = Helper.readInt("Enter ID > ");
+				boolean flag = loginStudent(studentList,user,pass);
+				if (flag && loginStudentt != null) {
+					
+					runSavingStudentProcess(loginStudentt); 
+				}
+
+				
+			}
+			else if (secondOption == 4) { 
+				int user = Helper.readInt("Enter ID > ");
+				System.out.println(ParentList.get(0).getRandomGenerate());
+				int rando = Helper.readInt("Enter random > ");
+				boolean flag = loginParent(ParentList,rando,user);
+				if (flag && loginParent != null) {
+					runSavingParentProcess(loginParent); 
+				}
+			}
+			
+//			
+//				
+//				Student loginPar = loginParent(ParentList); 
+//				if (loginPar != null) { 
+//					runSavingParentProcess(loginPar); 
+//				} 
+
+//
+//			} else { 
+//				System.out.println("Invalid Option > "); 
+//			} 
+		} 
+	} 
+
 	 
 	 //menus 
 	  
@@ -140,14 +167,15 @@ public class caseStudy {
 	 private void runSavingsProcess(Admin loginAccount) { 
 		  int memberOption = -1; 
 		   
-		  while (memberOption != 3) {
+		  while (memberOption != 4) {
+			  AdminMenu();
 			  memberOption = Helper.readInt("Enter choice > "); 
 			  
 			   if (memberOption == 1) { 
 			    StudentPage(); 
 			   } else if (memberOption == 2) { 
 			     
-			   } else if (memberOption == 3) { 
+			   } else if (memberOption == 7) { 
 			    System.out.println("Logging out."); 
 			      
 			   } else { 
@@ -158,8 +186,9 @@ public class caseStudy {
 			  
 			 private void runSavingStudentProcess(Student loginAccount) { 
 			  int memberOption = -1; 
-			   
+			  
 			  while (memberOption != 4) { 
+				  StudentMenu();
 			   memberOption = Helper.readInt("Enter choice > "); 
 			   if (memberOption == 1) { 
 			 
@@ -177,10 +206,11 @@ public class caseStudy {
 			  } 
 			 } 
 			  
-			 private void runSavingParentProcess(Student loginAccount) { 
+			 private void runSavingParentProcess(Parent loginAccount) { 
 			  int memberOption = -1; 
 			   
 			  while (memberOption != 4) { 
+				  ParentsMenu();
 			   memberOption = Helper.readInt("Enter choice > "); 
 			   if (memberOption == 1) { 
 			     
@@ -198,8 +228,9 @@ public class caseStudy {
 			  
 			 private void runSavingCordinatorProcess(ccaCoordinator loginAccount) { 
 			  int memberOption = -1; 
-			   
+			  
 			  while (memberOption != 4) { 
+				ccaCordinatorMenu();
 			   memberOption = Helper.readInt("Enter choice  > "); 
 			   if (memberOption == 1) { 
 				   addCCADetails();
@@ -223,6 +254,7 @@ public class caseStudy {
 		for (ccaCoordinator c : arrList) {
 			if (c.getName().equalsIgnoreCase(n) && c.getPassword().equalsIgnoreCase(p)) {
 				isFound = true;
+				loginCCAUser = c;
 				break;
 			}
 		}
@@ -234,6 +266,7 @@ public class caseStudy {
 		for (Admin a : arrList) {
 			if (a.getName().equalsIgnoreCase(n) && a.getPassword().equalsIgnoreCase(p)) {
 				isFound = true;
+				loginAdmin = a;
 				break;
 			}
 		}
@@ -245,6 +278,7 @@ public class caseStudy {
 		for (Student s : arrList) {
 			if (s.getName().equalsIgnoreCase(n) &&  ID == s.getStudentID()) {
 				isFound = true;
+				loginStudentt = s;
 				break;
 			}
 		}
@@ -256,12 +290,16 @@ public class caseStudy {
 		for (Parent p : arrList) {
 			if (p.getStudentID() == ID && p.getRandomGenerate() == rando ) {
 				isFound = true;
+				loginParent = p;
 				break;
 			}
 		}
 		return isFound;
 		
 	}
+	
+
+	
 	
 	 private void StudentPage() { 
 		  int option = -1; 

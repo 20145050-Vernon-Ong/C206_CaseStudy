@@ -13,7 +13,7 @@ public class CCA {
 	private String venue;
 	private String instructor;
 	private String category;
-	
+	//
 	public CCA(String title, String category, String description, int classSize, String day, double time, String venue,
 			String instructor) {
 		this.title = title;
