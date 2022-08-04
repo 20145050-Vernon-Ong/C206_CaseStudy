@@ -8,7 +8,7 @@ public class LoginToSystem {
 		// TODO Auto-generated method stub
 
 		private static void Menu() {
-		Helper.line(30, "=");
+			Helper.line(30, "=");
 			System.out.println("CCA Registration System");
 			Helper.line(30, "=");
 			System.out.println("1. Go to Student Page");
