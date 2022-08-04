@@ -201,11 +201,11 @@ public class C206_CaseStudy {
 	  while (memberOption != 4) { 
 	   memberOption = Helper.readInt("Enter choice  > "); 
 	   if (memberOption == 1) { 
-	     
+		   addCCADetails();
 	   } else if (memberOption == 2) { 
-	     
+		   editCCADetails();
 	   } else if (memberOption == 3) { 
-	     
+		   deleteCCADetails();
 	   } else if (memberOption == 4) { 
 	    System.out.println("Logging Out"); 
 	   } else { 
@@ -360,219 +360,20 @@ public class C206_CaseStudy {
 	 } 
 	  
 	 // CCA Section 
-	 /*public static void addStudentinCCA() { 
-	  // TODO Auto-generated method stub 
-	  // for students with cca 
-	  String name = Helper.readString("Enter name > "); 
-	  int studentID = Helper.readInt("Enter student ID > "); 
-	  int grade = Helper.readInt("Enter grade > "); 
-	  String cca = Helper.readString("Enter CCA"); 
-	  String classRoom = Helper.readString("Enter classroom > "); 
-	  studentincca.add(new StudentinCCA(name, studentID, grade, classRoom, cca)); 
-	 } 
-	 public static void viewStudentinCCA() { 
-	  // TODO Auto-generated method stub 
-	  for (int i = 0; i < studentincca.size(); i++){ 
-	   System.out.println(studentincca.get(i)); 
-	    
-	  }*/ 
-	   
 	 
 	 
+	 //CCA Cordinator Section
+	 private void addCCADetails() {
+		 
+	 }
 	 
+	 private void editCCADetails() {
+		 
+	 }
+
+	 private void deleteCCADetails() {
+		 
+	 }
+
+
 }
-  
-//			} else if (memberOption == 3) {
-//				System.out.println("Logging out.");
-//					
-//			} else {
-//				System.out.println("Invalid Option");
-//			}
-//		}
-//	}
-//	
-//	private void runSavingStudentProcess(Student loginAccount) {
-//		int memberOption = -1;
-//		
-//		while (memberOption != 3) {
-//			memberOption = Helper.readInt("Enter choice > ");
-//			if (memberOption == 1) {
-//
-//			} else if (memberOption == 2) {
-//				
-//
-//			} else if (memberOption == 3) {
-//				System.out.println("Logging Out.");
-//			} else {
-//				System.out.println("Invalid Option");
-//			}
-//		}
-//	}
-//	
-//	private void runSavingParentProcess(Student loginAccount) {
-//		int memberOption = -1;
-//		
-//		while (memberOption != 4) {
-//			memberOption = Helper.readInt("Enter choice > ");
-//			if (memberOption == 1) {
-//				
-//			} else if (memberOption == 2) {
-//				
-//			} else if (memberOption == 3) {
-//				
-//			} else if (memberOption == 4) {
-//				System.out.println("Logging Out");
-//			} else {
-//				System.out.println("Invalid Option");
-//			}
-//		}
-//	}
-////logins
-//	private static Admin getLoginAccount(ArrayList<Admin> adminList) {
-//		Admin loginAccount = null;
-//		for (Admin a : adminList) {
-//			String enterName = Helper.readString("Enter Name > ");
-//			String enterPass = Helper.readString("Enter password > ");
-//			if (a.login(enterName, enterPass) == true) {
-//				loginAccount = a;
-//				AdminMenu();
-//				break;	
-//			}	else if (a.login(enterName, enterPass) == false) {
-//				System.out.println("Username or password entered is incorrect please login again !");
-//			}
-//		}	
-//		return loginAccount;
-//	}
-//	//parent to register student for CCA
-//	private static Student getStudAccount(ArrayList<Student> studentList) {
-//		Student loginAccount = null;
-//		for (Student s : studentList) {
-//			String enterName = Helper.readString("Enter Name > ");
-//			int enterID = Helper.readInt("Enter Student ID > ");
-//			if (s.login(enterName, enterID) == true) {
-//				loginAccount = s;
-//				StudentMenu();
-//				break;	
-//			}else if (s.login(enterName, enterID) == false) {
-//				System.out.println("Name or ID entered is incorrect please login again !");
-//			}
-//		}
-//		return loginAccount;
-//		
-//	}
-//	//parents to login
-//	private static Student getParentAccount(ArrayList<Student> studentList) {
-//		Student loginAccount = null;
-//		for (Student s : studentList) {
-//			String enterName = Helper.readString("Enter Name > ");
-//			int enterID = Helper.readInt("Enter Student ID > ");
-//			if (s.login(enterName, enterID) == true) {
-//				loginAccount = s;
-//				ParentsMenu();
-//				break;	
-//			}else if (s.login(enterName, enterID) == false) {
-//				System.out.println("Name or ID entered is incorrect please login again !");
-//			}
-//		}
-//		return loginAccount;
-//		
-//	}
-//	
-//	// Student Section
-//	private void StudentPage() {
-//		int option = -1;
-//		
-//		while (option != 4) {
-//			Helper.line(30, "=");
-//			System.out.println("STUDENT PAGE");
-//			Helper.line(30, "=");
-//			System.out.println("1. Add Student");
-//			System.out.println("2. view Student");
-//			System.out.println("3. Delete Student");
-//			System.out.println("4. Go to Main Page");
-//			option = Helper.readInt("Enter option > ");
-//			if (option == 1) {
-//				
-//			} else if (option == 2) {
-//				viewStudent();
-//			} else if (option == 3) {
-//				
-//			} else if (option == 4){
-//				AdminMenu();
-//			} else {
-//				System.out.println("Invalid Option");
-//			}
-//		}
-//		
-//		
-//	}
-//	
-//	
-//
-//	
-//	private void RegisterStudent() {	
-//		int addGrade = Helper.readInt("Add Grade >");
-//		
-//		if (addGrade >= 4 && addGrade <= 6) {
-//			String addName = Helper.readString("Add Student Name > ");
-//			int addStudentID = Helper.readInt("Add Student ID > ");
-//			String classRoom = Helper.readString("Add ClassRoom > ");
-//			studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
-//		} else if (addGrade <= 3 && addGrade >= 1) {
-//			String addName = Helper.readString("Add Student Name > ");
-//			int addStudentID = Helper.readInt("Add Student ID > ");
-//			String classRoom = Helper.readString("Add ClassRoom > ");
-//			String addParent = Helper.readString("Add Parent Name > ");
-//			String addEmail = Helper.readString("Add Parent Email > ");
-//			int contact = Helper.readInt("Add Contact Number > ");
-//			studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
-//					addParent, addEmail, contact));
-//		} else {
-//			System.out.println("Invalid Grade");
-//		}
-//		
-//	}
-//	
-//	private void viewStudent() {
-//		
-//		String output = String.format("%-10s %-10s %-10s %s\n", "Name", "Student ID", "Grade", "Class Room");
-//		for (Student s : studentList) {
-//			if (s.getGrade() >= 4 && s.getGrade() <= 6) {
-//				output += String.format("%-10s %-10d %-10d %s\n", 
-//						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom());
-//			} else if (s.getGrade() <= 3 && s.getGrade() >= 1) {
-//				output += String.format("%-10s %-10d %-10d %-10s %-10s %-10s %d\n", 
-//						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom(),
-//						s.getParentName(), s.getParentEmail(), s.getContactNo());
-//			}
-//		}
-//		
-//		System.out.println(output);
-//	}
-//	
-//	private void deleteStudent() {
-//		
-//	}
-//	
-//	// CCA Section
-//	/*public static void addStudentinCCA() {
-//		// TODO Auto-generated method stub
-//		// for students with cca
-//		String name = Helper.readString("Enter name > ");
-//		int studentID = Helper.readInt("Enter student ID > ");
-//		int grade = Helper.readInt("Enter grade > ");
-//		String cca = Helper.readString("Enter CCA");
-//		String classRoom = Helper.readString("Enter classroom > ");
-//		studentincca.add(new StudentinCCA(name, studentID, grade, classRoom, cca));
-//	}
-//	public static void viewStudentinCCA() {
-//		// TODO Auto-generated method stub
-//		for (int i = 0; i < studentincca.size(); i++){
-//			System.out.println(studentincca.get(i));
-//			
-//		}*/
-//		
-
-
-
-
