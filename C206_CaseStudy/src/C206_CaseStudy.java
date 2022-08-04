@@ -37,7 +37,7 @@ public class C206_CaseStudy {
 	
 	private void secondStart() {
 		int secondOption = -1;
-		while (secondOption != 6) {
+		while (secondOption != 7) {
 			ASPMenu();
 			secondOption = Helper.readInt("Enter option > ");
 			if (secondOption == 1) {
@@ -46,20 +46,20 @@ public class C206_CaseStudy {
 					runSavingsProcess(login);
 				}
 			} else if (secondOption == 2) {
+				
+			} else if (secondOption == 3) {
 				Student loginStud = getStudAccount(studentList);
 				if (loginStud != null) {
 					runSavingStudentProcess(loginStud);
 				}
-			} else if (secondOption == 3) {
-				
 			} else if (secondOption == 4) {
-				
-			} else if (secondOption == 5) {
 				Student loginStud = getParentAccount(studentList);
 				if (loginStud != null) {
 					runSavingParentProcess(loginStud);
 				}
-			} else if (secondOption == 6) {
+			} else if (secondOption == 5) {
+	
+			} else if (secondOption == 7) {
 				
 			} else {
 				System.out.println("Invalid Option > ");
@@ -73,11 +73,12 @@ public class C206_CaseStudy {
 		System.out.println("Logging Page");
 		Helper.line(30, "=");
 		System.out.println("1. Login as Admin");
-		System.out.println("2. Login as Student (For P4 and Above)");
-		System.out.println("3. Login as Parents (For P3 and Below)");
-		System.out.println("4. Register Student Account");
-		System.out.println("5. Register Parent Account");
-		System.out.println("6. Go back to Main Page");
+		System.out.println("2. Login as CCA Cordinator");
+		System.out.println("3. Login as Student (For P4 and Above)");
+		System.out.println("4. Login as Parents (For P3 and Below)");
+		System.out.println("5. Register Student Account");
+		System.out.println("6. Register Parent Account");
+		System.out.println("7. Go back to Main Page");
 	}
 
 	private static void AdminMenu() {
