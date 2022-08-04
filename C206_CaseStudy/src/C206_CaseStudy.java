@@ -252,53 +252,53 @@ public class C206_CaseStudy {
 	}
 	
 	
-	public void RegisterParent(){
-
-		String addName = Helper.readString("Enter Student Name > ");
-					int addStudentID = Helper.readInt("Enter Student ID > ");
-					String classRoom = Helper.readString("Enter ClassRoom > ");
-					int addGrade= Helper.readInt("Enter Grade > ");
-					String addParent = Helper.readString("Enter Parent Name > ");
-					String addEmail = Helper.readString("Enter Parent Email > ");
-					int contact = Helper.readInt("Enter Contact Number > ");
-					studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
-							addParent, addEmail, contact));
-		}
-
-
-
-		public void RegisterStudent(){
-
-		String addName = Helper.readString("Enter Student Name > ");
-					int addStudentID = Helper.readInt("Enter Student ID > ");
-					String classRoom = Helper.readString("Enter ClassRoom > ");
-					int addGrade= Helper.readInt("Enter Grade> ");
-					studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
-					}
-	
-	
-//	private void addStudent() {	
-//		int addGrade = Helper.readInt("Add Grade >");
-//		
-//		if (addGrade >= 4 && addGrade <= 6) {
-//			String addName = Helper.readString("Add Student Name > ");
-//			int addStudentID = Helper.readInt("Add Student ID > ");
-//			String classRoom = Helper.readString("Add ClassRoom > ");
-//			studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
-//		} else if (addGrade <= 3 && addGrade >= 1) {
-//			String addName = Helper.readString("Add Student Name > ");
-//			int addStudentID = Helper.readInt("Add Student ID > ");
-//			String classRoom = Helper.readString("Add ClassRoom > ");
-//			String addParent = Helper.readString("Add Parent Name > ");
-//			String addEmail = Helper.readString("Add Parent Email > ");
-//			int contact = Helper.readInt("Add Contact Number > ");
-//			studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
-//					addParent, addEmail, contact));
-//		} else {
-//			System.out.println("Invalid Grade");
+//	public void RegisterParent(){
+//
+//		String addName = Helper.readString("Enter Student Name > ");
+//					int addStudentID = Helper.readInt("Enter Student ID > ");
+//					String classRoom = Helper.readString("Enter ClassRoom > ");
+//					int addGrade= Helper.readInt("Enter Grade > ");
+//					String addParent = Helper.readString("Enter Parent Name > ");
+//					String addEmail = Helper.readString("Enter Parent Email > ");
+//					int contact = Helper.readInt("Enter Contact Number > ");
+//					studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
+//							addParent, addEmail, contact));
 //		}
-//		
-//	}
+//
+//
+//
+//		public void RegisterStudent(){
+//
+//		String addName = Helper.readString("Enter Student Name > ");
+//					int addStudentID = Helper.readInt("Enter Student ID > ");
+//					String classRoom = Helper.readString("Enter ClassRoom > ");
+//					int addGrade= Helper.readInt("Enter Grade> ");
+//					studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
+//					}
+//	
+	
+	private void RegisterStudent() {	
+		int addGrade = Helper.readInt("Add Grade >");
+		
+		if (addGrade >= 4 && addGrade <= 6) {
+			String addName = Helper.readString("Add Student Name > ");
+			int addStudentID = Helper.readInt("Add Student ID > ");
+			String classRoom = Helper.readString("Add ClassRoom > ");
+			studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
+		} else if (addGrade <= 3 && addGrade >= 1) {
+			String addName = Helper.readString("Add Student Name > ");
+			int addStudentID = Helper.readInt("Add Student ID > ");
+			String classRoom = Helper.readString("Add ClassRoom > ");
+			String addParent = Helper.readString("Add Parent Name > ");
+			String addEmail = Helper.readString("Add Parent Email > ");
+			int contact = Helper.readInt("Add Contact Number > ");
+			studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
+					addParent, addEmail, contact));
+		} else {
+			System.out.println("Invalid Grade");
+		}
+		
+	}
 	
 	private void viewStudent() {
 		
