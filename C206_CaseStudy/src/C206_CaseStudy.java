@@ -22,7 +22,7 @@ public class C206_CaseStudy {
 		//studentList.add(new Student("Earnest", 2003, 4, "C206")); 
 		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
 		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn", "BasketBall is a 10 player game"));
-
+		
 		int option = -1; 
 		while (option != 2) { 
 			LoginMenu(); 
@@ -371,9 +371,9 @@ public class C206_CaseStudy {
 				"CCA TITLE", "CCA CATEGORY", "CCA DESCRIPTION", "CLASS SIZE",
 				"CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR");
 		for (CCA c : ccaList) {
-			output += String.format("%-10s %-10s %-10s %-10d %-10s %-10.2f %-10s %s\n", c.getTitle(), 
-					c.getCategory(), c.getDescription(), c.getClassSize(),
-					c.getDay(), c.getTime(), c.getVenue(), c.getInstructor());
+			output += String.format("%-10s %-10s %-10d %-10s %-10.2f %-10s %-10s %s\n", c.getTitle(), 
+					c.getCategory(), c.getClassSize(), c.getDay(), 
+					c.getTime(), c.getVenue(), c.getInstructor(), c.getDescription());
 		}
 
 		System.out.println(output);
@@ -417,10 +417,12 @@ public class C206_CaseStudy {
 						c.setTime(editTime);
 					} else if (option == 4) {
 						String editVenue = Helper.readString("Edit CCA Venue > ");
+						c.setVenue(editVenue);
 					} else if (option == 5) {
-
+						String editInstructor = Helper.readString("Edit CCA Instructor > ");
+						c.setInstructor(editInstructor);
 					} else if (option == 6) {
-
+						ccaCordinatorMenu();
 					} else {
 						System.out.println("Invalid Option");
 					}
@@ -432,9 +434,10 @@ public class C206_CaseStudy {
 	private void deleteCCADetails() {
 
 		String delCCATitle = Helper.readString("Enter CCA details to delete > ");
-		for (CCA C : ccaList) {
-			if (delCCATitle.equals(C.getTitle())) {
-				ccaList.remove(delCCATitle);
+		for (int i = 0; i < ccaList.size(); i++) {
+			if (ccaList.get(i).getTitle().contains(delCCATitle)) {
+				ccaList.remove(i);
+				break;
 			}
 		}
 
