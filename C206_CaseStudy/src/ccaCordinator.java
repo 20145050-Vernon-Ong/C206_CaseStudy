@@ -22,7 +22,7 @@ public class ccaCordinator {
 	public String getPassword() {
 		return password;
 	}
-	
+	//Login
 	public boolean login(String name, String password) {
 		if (name.equals(getName()) && password.equals(getPassword())) {
 			return true;
