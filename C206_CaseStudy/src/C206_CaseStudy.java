@@ -94,7 +94,8 @@ public class C206_CaseStudy {
   Helper.line(30, "="); 
   System.out.println("1. Go to Student Page"); 
   System.out.println("2. Go to CCA Page"); 
-  System.out.println("3. Log Out"); 
+  System.out.println("3. View CCA Cordinator");
+  System.out.println("4. Log Out"); 
  } 
   
  private static void StudentMenu() { 
@@ -157,7 +158,7 @@ public class C206_CaseStudy {
 	 private void runSavingStudentProcess(Student loginAccount) { 
 	  int memberOption = -1; 
 	   
-	  while (memberOption != 3) { 
+	  while (memberOption != 4) { 
 	   memberOption = Helper.readInt("Enter choice > "); 
 	   if (memberOption == 1) { 
 	 
@@ -165,7 +166,10 @@ public class C206_CaseStudy {
 	     
 	 
 	   } else if (memberOption == 3) { 
-	    System.out.println("Logging Out."); 
+	   
+		   
+	   } else if (memberOption == 4) {
+		   System.out.println("Logging Out."); 
 	   } else { 
 	    System.out.println("Invalid Option"); 
 	   } 
@@ -296,7 +300,7 @@ public class C206_CaseStudy {
 	   } else if (option == 3) {
 		   deleteStudent();
 	   } else if (option == 4){ 
-	    AdminMenu(); 
+		   AdminMenu(); 
 	   } else { 
 	    System.out.println("Invalid Option"); 
 	   } 
