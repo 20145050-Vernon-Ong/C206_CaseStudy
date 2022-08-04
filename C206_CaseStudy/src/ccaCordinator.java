@@ -23,6 +23,12 @@ public class ccaCordinator {
 		return password;
 	}
 
-	
+	public boolean login(String name, String password) {
+		if (name.equals(getName()) && password.equals(getPassword())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }

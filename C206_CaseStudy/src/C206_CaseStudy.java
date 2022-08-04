@@ -6,11 +6,10 @@ public class C206_CaseStudy {
 	
 	ArrayList<Student> studentList = new ArrayList<Student>();
 	
-	ArrayList<Parents> parentList = new ArrayList<Parents>();
+	ArrayList<ccaCordinator> parentList = new ArrayList<ccaCordinator>();
 	
 	ArrayList<CCA> ccaList = new ArrayList<CCA>();
-	static ArrayList<StudentinCCA> studentincca = new ArrayList<StudentinCCA>();
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		C206_CaseStudy starting = new C206_CaseStudy();
@@ -300,7 +299,7 @@ public class C206_CaseStudy {
 	}
 	
 	// CCA Section
-	public static void addStudentinCCA() {
+	/*public static void addStudentinCCA() {
 		// TODO Auto-generated method stub
 		// for students with cca
 		String name = Helper.readString("Enter name > ");
@@ -315,9 +314,9 @@ public class C206_CaseStudy {
 		for (int i = 0; i < studentincca.size(); i++){
 			System.out.println(studentincca.get(i));
 			
-		}
+		}*/
 		
 
 
-}
+
 }
