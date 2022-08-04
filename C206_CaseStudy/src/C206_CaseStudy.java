@@ -290,11 +290,11 @@ public class C206_CaseStudy {
 	   System.out.println("4. Go to Main Page"); 
 	   option = Helper.readInt("Enter option > "); 
 	   if (option == 1) { 
-	     
-	   } else if (option == 2) { 
-	    viewStudent(); 
-	   } else if (option == 3) { 
-	     
+		   RegisterStudent();
+	   } else if (option == 2) {
+		   viewStudent(); 
+	   } else if (option == 3) {
+		   deleteStudent();
 	   } else if (option == 4){ 
 	    AdminMenu(); 
 	   } else { 
@@ -347,7 +347,12 @@ public class C206_CaseStudy {
 	 } 
 	  
 	 private void deleteStudent() { 
-	   
+	   int delStudentID = Helper.readInt("Enter Student ID > ");
+	   for (Student s : studentList) {
+		   if (delStudentID == s.getStudentID()) {
+			   studentList.remove(delStudentID);
+		   }
+	   }
 	 } 
 	  
 	 // CCA Section 
