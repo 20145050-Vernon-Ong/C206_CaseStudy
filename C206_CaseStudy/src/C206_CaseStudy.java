@@ -68,8 +68,7 @@ public class C206_CaseStudy {
 		System.out.println("1. Login as Admin");
 		System.out.println("2. Login as Student (For P4 and Above)");
 		System.out.println("3. Login as Parents (For P3 and Below)");
-		System.out.println("4. Register Student Account (For P4 and Above");
-		System.out.println("5. Register Student Account (For P3 and Below");
+		System.out.println("4. Register Student Account");
 		System.out.println("6. Go back to Main Page");
 	}
 
