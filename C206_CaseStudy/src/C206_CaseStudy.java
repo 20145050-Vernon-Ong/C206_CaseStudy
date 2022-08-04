@@ -17,7 +17,7 @@ public class C206_CaseStudy {
 	}
 
 	private void start() { 
-
+// Update
 		adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
 		//studentList.add(new Student("Earnest", 2003, 4, "C206")); 
 		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
