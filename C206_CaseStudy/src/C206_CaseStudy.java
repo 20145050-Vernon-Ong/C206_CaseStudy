@@ -56,7 +56,10 @@ public class C206_CaseStudy {
 			} else if (secondOption == 4) {
 				
 			} else if (secondOption == 5) {
-				
+				Student loginStud = getStudAccount(studentList);
+				if (loginStud != null) {
+					runSavingParentProcess(loginStud);
+				}
 			} else if (secondOption == 6) {
 				
 			} else {
@@ -93,6 +96,16 @@ public class C206_CaseStudy {
 		System.out.println("1. Go to view CCA");
 		System.out.println("2. Register for CCA");
 		System.out.println("3. Log Out");
+	}
+	
+	private static void ParentsMenu() {
+		Helper.line(30, "=");
+		System.out.println("CCA Registration System");
+		Helper.line(30, "=");
+		System.out.println("1. View Student Details");
+		System.out.println("2. Register Student for CCA");
+		System.out.println("3. View CCA Page");
+		System.out.println("4. Log Out");
 	}
 
 	private static void LoginMenu() {
@@ -133,7 +146,26 @@ public class C206_CaseStudy {
 				
 
 			} else if (memberOption == 3) {
-				System.out.println("Logging out.");
+				System.out.println("Logging Out.");
+			} else {
+				System.out.println("Invalid Option");
+			}
+		}
+	}
+	
+	private void runSavingParentProcess(Student loginAccount) {
+		int memberOption = -1;
+		
+		while (memberOption != 4) {
+			memberOption = Helper.readInt("Enter choice > ");
+			if (memberOption == 1) {
+				
+			} else if (memberOption == 2) {
+				
+			} else if (memberOption == 3) {
+				
+			} else if (memberOption == 4) {
+				System.out.println("Logging Out");
 			} else {
 				System.out.println("Invalid Option");
 			}
