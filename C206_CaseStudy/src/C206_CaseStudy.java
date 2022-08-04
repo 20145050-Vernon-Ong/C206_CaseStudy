@@ -56,7 +56,7 @@ public class C206_CaseStudy {
 			} else if (secondOption == 4) {
 				
 			} else if (secondOption == 5) {
-				Student loginStud = getStudAccount(studentList);
+				Student loginStud = getParentAccount(studentList);
 				if (loginStud != null) {
 					runSavingParentProcess(loginStud);
 				}
@@ -204,6 +204,24 @@ public class C206_CaseStudy {
 		return loginAccount;
 		
 	}
+	
+	private static Student getParentAccount(ArrayList<Student> studentList) {
+		Student loginAccount = null;
+		for (Student s : studentList) {
+			String enterName = Helper.readString("Enter Name > ");
+			int enterID = Helper.readInt("Enter Student ID > ");
+			if (s.login(enterName, enterID) == true) {
+				loginAccount = s;
+				ParentsMenu();
+				break;	
+			}else if (s.login(enterName, enterID) == false) {
+				System.out.println("Name or ID entered is incorrect please login again !");
+			}
+		}
+		return loginAccount;
+		
+	}
+	
 	// Student Section
 	private void StudentPage() {
 		int option = -1;
