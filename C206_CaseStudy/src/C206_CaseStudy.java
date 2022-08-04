@@ -21,7 +21,7 @@ public class C206_CaseStudy {
 		adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
 		//studentList.add(new Student("Earnest", 2003, 4, "C206")); 
 		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
-		ccaList.add(new CCA("BasketBall", "Sports", "BasketBall is a 10 player game", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn"));
+		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn", "BasketBall is a 10 player game"));
 
 		int option = -1; 
 		while (option != 2) { 
@@ -380,7 +380,9 @@ public class C206_CaseStudy {
 	}
 
 	private void addCCADetails() {
+		Helper.line(50, "=");
 		System.out.println("ADD CCA DETAILS");
+		Helper.line(50, "=");
 		String addTitle = Helper.readString("Enter CCA Title > ");
 		String addCategory = Helper.readString("Enter CCA Category > ");
 		String addDescribe = Helper.readString("Enter CCA Description > ");
@@ -389,7 +391,7 @@ public class C206_CaseStudy {
 		double addTime = Helper.readDouble("Enter CCA Time > ");
 		String venue = Helper.readString("Enter CCA Venue > ");
 		String instructor = Helper.readString("Enter CCA instructor > " );
-		ccaList.add(new CCA(addTitle, addCategory, addDescribe, addClassSize, addDay, addTime, venue, instructor));
+		ccaList.add(new CCA(addTitle, addCategory, addClassSize, addDay, addTime, venue, instructor, addDescribe));
 	}
 
 	private void editCCADetails() {

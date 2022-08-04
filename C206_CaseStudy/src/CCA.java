@@ -11,8 +11,8 @@ public class CCA {
 	private String instructor;
 	private String category;
 	
-	public CCA(String title, String category, String description, int classSize, String day, double time, String venue,
-			String instructor) {
+	public CCA(String title, String category , int classSize, String day, double time, String venue,
+			String instructor, String description) {
 		this.title = title;
 		this.category = category;
 		this.description = description;
