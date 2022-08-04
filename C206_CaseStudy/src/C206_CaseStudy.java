@@ -17,9 +17,7 @@ public class C206_CaseStudy {
 	}
 
 	private void start() { 
-// Update
-		adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
-		//studentList.add(new Student("Earnest", 2003, 4, "C206")); 
+		adminList.add(new Admin("Vernon Ong", "verC206DIT"));  
 		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
 		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn", "BasketBall is a 10 player game"));
 		
