@@ -71,51 +71,48 @@ public class C206_CaseStudy {
     	   } 
      } 
    } 
+    //menus 
+    private static void ASPMenu() { 
+    	Helper.line(30, "=");
+    	System.out.println("Logging Page"); 
+    	Helper.line(30, "="); 
+    	System.out.println("1. Login as Admin"); 
+    	System.out.println("2. Login as CCA Cordinator"); 
+    	System.out.println("3. Login as Student (For P4 and Above)"); 
+    	System.out.println("4. Login as Parents (For P3 and Below)"); 
+    	System.out.println("5. Register Student Account"); 
+    	System.out.println("6. Register Parent Account"); 
+    	System.out.println("7. Go back to Main Page"); 
+    } 
+    
+    private static void AdminMenu() { 
+    	Helper.line(30, "="); 
+    	System.out.println("CCA Registration System"); 
+    	Helper.line(30, "="); 
+    	System.out.println("1. Go to Student Page"); 
+    	System.out.println("2. Go to CCA Page"); 
+    	System.out.println("3. View CCA Cordinator");
+    	System.out.println("4. Log Out");
+    } 
   
- 
- //menus 
+    private static void StudentMenu() { 
+    	Helper.line(30, "="); 
+    	System.out.println("CCA Registration System"); 
+    	Helper.line(30, "="); 
+    	System.out.println("1. Go to view CCA"); 
+    	System.out.println("2. Register for CCA"); 
+    	System.out.println("3. Log Out");
+    } 
   
- private static void ASPMenu() { 
-  Helper.line(30, "="); 
-  System.out.println("Logging Page"); 
-  Helper.line(30, "="); 
-  System.out.println("1. Login as Admin"); 
-  System.out.println("2. Login as CCA Cordinator"); 
-  System.out.println("3. Login as Student (For P4 and Above)"); 
-  System.out.println("4. Login as Parents (For P3 and Below)"); 
-  System.out.println("5. Register Student Account"); 
-  System.out.println("6. Register Parent Account"); 
-  System.out.println("7. Go back to Main Page"); 
- } 
- 
- private static void AdminMenu() { 
-  Helper.line(30, "="); 
-  System.out.println("CCA Registration System"); 
-  Helper.line(30, "="); 
-  System.out.println("1. Go to Student Page"); 
-  System.out.println("2. Go to CCA Page"); 
-  System.out.println("3. View CCA Cordinator");
-  System.out.println("4. Log Out"); 
- } 
-  
- private static void StudentMenu() { 
-  Helper.line(30, "="); 
-  System.out.println("CCA Registration System"); 
-  Helper.line(30, "="); 
-  System.out.println("1. Go to view CCA"); 
-  System.out.println("2. Register for CCA"); 
-  System.out.println("3. Log Out"); 
- } 
-  
- private static void ParentsMenu() { 
-  Helper.line(30, "="); 
-  System.out.println("CCA Registration System"); 
-  Helper.line(30, "="); 
-  System.out.println("1. View Student Details"); 
-  System.out.println("2. Register Student for CCA"); 
-  System.out.println("3. View CCA Page"); 
-  System.out.println("4. Log Out"); 
- } 
+    private static void ParentsMenu() { 
+    	Helper.line(30, "="); 
+    	System.out.println("CCA Registration System"); 
+    	Helper.line(30, "="); 
+    	System.out.println("1. View Student Details"); 
+    	System.out.println("2. Register Student for CCA"); 
+    	System.out.println("3. View CCA Page"); 
+    	System.out.println("4. Log Out");
+    } 
  
  private static void LoginMenu() { 
   Helper.line(30, "="); 
@@ -128,11 +125,12 @@ public class C206_CaseStudy {
  private static void ccaCordinatorMenu() { 
   Helper.line(30, "="); 
   System.out.println("CCA Registration System"); 
-  Helper.line(30, "="); 
-  System.out.println("1. Add CCA Details"); 
-  System.out.println("2. Edit CCA Details"); 
-  System.out.println("3. Delete CCA Details"); 
-  System.out.println("4. Log Out"); 
+  Helper.line(30, "=");
+  System.out.println("1. View CCA Details");
+  System.out.println("2. Add CCA Details"); 
+  System.out.println("3. Edit CCA Details"); 
+  System.out.println("4. Delete CCA Details"); 
+  System.out.println("5. Log Out"); 
  } 
  
  
@@ -201,13 +199,14 @@ public class C206_CaseStudy {
 	  while (memberOption != 4) { 
 	   memberOption = Helper.readInt("Enter choice  > "); 
 	   if (memberOption == 1) { 
-		   addCCADetails();
+		   ccaCordinatorPage();
 	   } else if (memberOption == 2) { 
-		   editCCADetails();
+		   
 	   } else if (memberOption == 3) { 
-		   deleteCCADetails();
-	   } else if (memberOption == 4) { 
-	    System.out.println("Logging Out"); 
+	   } else if (memberOption == 4) {
+		   
+	   } else if (memberOption == 5) { 
+	    System.out.println("Logging Out");
 	   } else { 
 	    System.out.println("Invalid Option"); 
 	   } 
@@ -306,7 +305,30 @@ public class C206_CaseStudy {
 	   } 
 	  } 
 	   
-	 } 
+	 }
+	 
+	 private void ccaCordinatorPage() {
+		 
+		 int option = -1;
+		 
+		 while (option != 5) {
+			 ccaCordinatorMenu();
+			 option = Helper.readInt("Enter option > ");
+			 if (option == 1) {
+				 viewCCADetails();
+			 } else if (option == 2) {
+				 addCCADetails();
+			 } else if (option == 3) {
+				 editCCADetails();
+			 } else if (option == 4) {
+				 deleteCCADetails();
+			 } else if (option == 5) {
+				 ccaCordinatorMenu();
+			 } else {
+				 System.out.println("Invalid Option");
+			 }
+		 }
+	 }
 	  
 	 private void RegisterStudent() {  
 	  int addGrade = Helper.readInt("Add Grade >"); 
@@ -363,6 +385,20 @@ public class C206_CaseStudy {
 	 
 	 
 	 //CCA Cordinator Section
+	 private void viewCCADetails() {
+		 String output = "";
+		 output += String.format("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %s\n", 
+				 "CCA TITLE", "CCA CATEGORY", "CCA DESCRIPTION", "CLASS SIZE",
+				 "CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR");
+		 for (CCA c : ccaList) {
+			 output += String.format("%-10s %-10s %-10s %-10d %-10s %-10.2f %-10s %s\n", c.getTitle(), 
+					 c.getCategory(), c.getDescription(), c.getClassSize(),
+					 c.getDay(), c.getTime(), c.getVenue(), c.getInstructor());
+		 }
+		 
+		 System.out.println(output);
+	 }
+	 
 	 private void addCCADetails() {
 		 System.out.println("ADD CCA DETAILS");
 		 String addTitle = Helper.readString("Enter CCA Title > ");
@@ -377,7 +413,7 @@ public class C206_CaseStudy {
 	 }
 	 
 	 private void editCCADetails() {
-		 
+		 String
 	 }
 
 	 private void deleteCCADetails() {
