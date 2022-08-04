@@ -38,7 +38,7 @@ public class C206_CaseStudy {
 	
 	private void secondStart() {
 		int secondOption = -1;
-		while (secondOption != 4) {
+		while (secondOption != 6) {
 			ASPMenu();
 			secondOption = Helper.readInt("Enter option > ");
 			if (secondOption == 1) {
@@ -54,6 +54,10 @@ public class C206_CaseStudy {
 			} else if (secondOption == 3) {
 				
 			} else if (secondOption == 4) {
+				
+			} else if (secondOption == 5) {
+				
+			} else if (secondOption == 6) {
 				
 			} else {
 				System.out.println("Invalid Option > ");
