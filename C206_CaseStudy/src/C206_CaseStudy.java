@@ -198,7 +198,7 @@ public class C206_CaseStudy {
 	private void runSavingCordinatorProcess(ccaCordinator loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 4) { 
+		while (memberOption != 5) { 
 			memberOption = Helper.readInt("Enter choice  > "); 
 			if (memberOption == 1) { 
 				viewCCADetails();
