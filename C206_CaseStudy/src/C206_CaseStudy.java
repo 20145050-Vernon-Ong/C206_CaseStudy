@@ -67,6 +67,7 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+	//menus
 	
 	private static void ASPMenu() {
 		Helper.line(30, "=");
@@ -171,7 +172,7 @@ public class C206_CaseStudy {
 			}
 		}
 	}
-
+//logins
 	private static Admin getLoginAccount(ArrayList<Admin> adminList) {
 		Admin loginAccount = null;
 		for (Admin a : adminList) {
@@ -187,7 +188,7 @@ public class C206_CaseStudy {
 		}	
 		return loginAccount;
 	}
-	
+	//parent to register student for CCA
 	private static Student getStudAccount(ArrayList<Student> studentList) {
 		Student loginAccount = null;
 		for (Student s : studentList) {
@@ -204,7 +205,7 @@ public class C206_CaseStudy {
 		return loginAccount;
 		
 	}
-	
+	//parents to login
 	private static Student getParentAccount(ArrayList<Student> studentList) {
 		Student loginAccount = null;
 		for (Student s : studentList) {
@@ -252,30 +253,7 @@ public class C206_CaseStudy {
 	}
 	
 	
-//	public void RegisterParent(){
-//
-//		String addName = Helper.readString("Enter Student Name > ");
-//					int addStudentID = Helper.readInt("Enter Student ID > ");
-//					String classRoom = Helper.readString("Enter ClassRoom > ");
-//					int addGrade= Helper.readInt("Enter Grade > ");
-//					String addParent = Helper.readString("Enter Parent Name > ");
-//					String addEmail = Helper.readString("Enter Parent Email > ");
-//					int contact = Helper.readInt("Enter Contact Number > ");
-//					studentList.add(new Student(addName, addStudentID, addGrade, classRoom, 
-//							addParent, addEmail, contact));
-//		}
-//
-//
-//
-//		public void RegisterStudent(){
-//
-//		String addName = Helper.readString("Enter Student Name > ");
-//					int addStudentID = Helper.readInt("Enter Student ID > ");
-//					String classRoom = Helper.readString("Enter ClassRoom > ");
-//					int addGrade= Helper.readInt("Enter Grade> ");
-//					studentList.add(new Student(addName, addStudentID, addGrade, classRoom));
-//					}
-//	
+
 	
 	private void RegisterStudent() {	
 		int addGrade = Helper.readInt("Add Grade >");
