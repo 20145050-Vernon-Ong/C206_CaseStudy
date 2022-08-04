@@ -70,7 +70,7 @@ public class C206_CaseStudy {
 		System.out.println("3. Login as Parents (For P3 and Below)");
 		System.out.println("4. Register Student Account (For P4 and Above");
 		System.out.println("5. Register Student Account (For P3 and Below");
-		System.out.println("4. Go back to Main Page");
+		System.out.println("6. Go back to Main Page");
 	}
 
 	private static void AdminMenu() {
