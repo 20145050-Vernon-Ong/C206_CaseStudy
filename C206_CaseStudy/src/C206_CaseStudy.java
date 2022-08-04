@@ -1,76 +1,77 @@
 import java.util.ArrayList; 
  
 public class C206_CaseStudy { 
+	// ArrayList 
+	ArrayList<Admin> adminList = new ArrayList<Admin>(); 
+	
+	ArrayList<Student> studentList = new ArrayList<Student>(); 
   
- // ArrayList 
- ArrayList<Admin> adminList = new ArrayList<Admin>(); 
+    ArrayList<ccaCordinator> ccaCordinatorList = new ArrayList<ccaCordinator>(); 
   
- ArrayList<Student> studentList = new ArrayList<Student>(); 
+    ArrayList<CCA> ccaList = new ArrayList<CCA>(); 
   
- ArrayList<ccaCordinator> ccaCordinatorList = new ArrayList<ccaCordinator>(); 
-  
- ArrayList<CCA> ccaList = new ArrayList<CCA>(); 
-  
- public static void main(String[] args) { 
-  // TODO Auto-generated method stub 
-  C206_CaseStudy starting = new C206_CaseStudy(); 
-  starting.start(); 
- } 
- private void start() { 
+    public static void main(String[] args) { 
+    // TODO Auto-generated method stub 
+       C206_CaseStudy starting = new C206_CaseStudy(); 
+       starting.start(); 
+    }
+    
+    private void start() { 
  
-  adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
-  //studentList.add(new Student("Earnest", 2003, 4, "C206")); 
-  ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002")); 
+       adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
+       //studentList.add(new Student("Earnest", 2003, 4, "C206")); 
+       ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002")); 
  
-  int option = -1; 
-  while (option != 2) { 
-   LoginMenu(); 
-   option = Helper.readInt("Enter option > "); 
-   if (option == 1) { 
-    secondStart(); 
-   } else if (option == 2) { 
-    System.out.println("Closing..."); 
-   } else { 
-    System.out.println("Invalid Option."); 
+       int option = -1; 
+       while (option != 2) { 
+    	   LoginMenu(); 
+    	   option = Helper.readInt("Enter option > "); 
+    	   if (option == 1) { 
+    		   secondStart(); 
+    		   } else if (option == 2) { 
+    			   System.out.println("Closing...");
+    		   } else { 
+    			   System.out.println("Invalid Option."); 
+    		   } 
+      } 
+     } 
+    
+    private void secondStart() { 
+    	int secondOption = -1; 
+    	while (secondOption != 7) { 
+    		ASPMenu(); 
+    	    secondOption = Helper.readInt("Enter option > "); 
+    	    if (secondOption == 1) { 
+    	        Admin login = getLoginAccount(adminList); 
+    	        if (login != null) { 
+    	             runSavingsProcess(login); 
+    	        } 
+    	    } else if (secondOption == 2) { 
+    	         ccaCordinator loginCordinator = getCCACordinatorAccount(ccaCordinatorList); 
+    	         if (loginCordinator != null) { 
+    	             runSavingCordinatorProcess(loginCordinator); 
+    	         }  
+    	   } else if (secondOption == 3) { 
+    		   Student loginStud = getStudAccount(studentList); 
+    		   if (loginStud != null) { 
+       	             runSavingStudentProcess(loginStud); 
+       	       } 
+    	   } else if (secondOption == 4) { 
+    	       Student loginStud = getParentAccount(studentList); 
+    	       if (loginStud != null) { 
+    	             runSavingParentProcess(loginStud); 
+    	       } 
+    	   } else if (secondOption == 5) { 
+    	  
+    	   } else if (secondOption == 7) { 
+    	     
+    	   } else { 
+    	    System.out.println("Invalid Option > "); 
+    	   } 
+     } 
    } 
-  } 
- } 
   
- private void secondStart() { 
-  int secondOption = -1; 
-  while (secondOption != 7) { 
-   ASPMenu(); 
-   secondOption = Helper.readInt("Enter option > "); 
-   if (secondOption == 1) { 
-    Admin login = getLoginAccount(adminList); 
-    if (login != null) { 
-     runSavingsProcess(login); 
-    } 
-   } else if (secondOption == 2) { 
-    ccaCordinator loginCordinator = getCCACordinatorAccount(ccaCordinatorList); 
-    if (loginCordinator != null) { 
-     runSavingCordinatorProcess(loginCordinator); 
-    } 
-     
-   } else if (secondOption == 3) { 
-    Student loginStud = getStudAccount(studentList); 
-    if (loginStud != null) { 
-     runSavingStudentProcess(loginStud); 
-    } 
-   } else if (secondOption == 4) { 
-    Student loginStud = getParentAccount(studentList); 
-    if (loginStud != null) { 
-     runSavingParentProcess(loginStud); 
-    } 
-   } else if (secondOption == 5) { 
-  
-   } else if (secondOption == 7) { 
-     
-   } else { 
-    System.out.println("Invalid Option > "); 
-   } 
-  } 
- } 
+ 
  //menus 
   
  private static void ASPMenu() { 
@@ -299,11 +300,7 @@ public class C206_CaseStudy {
 	   } 
 	  } 
 	   
-	   
 	 } 
-	  
-	  
-	 
 	  
 	 private void RegisterStudent() {  
 	  int addGrade = Helper.readInt("Add Grade >"); 
