@@ -102,7 +102,7 @@ public class caseStudy {
 	} 
 
 	 
-	 //menu
+	 //menus
 	  
 	 private static void ASPMenu() { 
 	  Helper.line(30, "="); 
