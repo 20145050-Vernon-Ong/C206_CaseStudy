@@ -311,28 +311,6 @@ public class C206_CaseStudy {
 
 	}
 
-	private void ccaCordinatorPage() {
-
-		int option = -1;
-
-		while (option != 5) {
-			option = Helper.readInt("Enter option > ");
-			if (option == 1) {
-				viewCCADetails();
-			} else if (option == 2) {
-				addCCADetails();
-			} else if (option == 3) {
-				editCCADetails();
-			} else if (option == 4) {
-				deleteCCADetails();
-			} else if (option == 5) {
-				ccaCordinatorMenu();
-			} else {
-				System.out.println("Invalid Option");
-			}
-		}
-	}
-
 	private void RegisterStudent() {  
 		int addGrade = Helper.readInt("Add Grade >"); 
 
