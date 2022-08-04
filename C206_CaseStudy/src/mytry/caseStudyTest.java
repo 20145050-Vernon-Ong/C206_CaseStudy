@@ -25,7 +25,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-public class fku {
+public class caseStudyTest {
 //	private Student s1;//test 3<=
 //	private Student s2;//test4>=
 //	private ccaCoordinator cc1;//test ccaadmin
@@ -36,7 +36,7 @@ public class fku {
 	ArrayList<ccaCoordinator> CordinatorList = new ArrayList<ccaCoordinator>();
 	ArrayList<Parent> ParentList= new ArrayList<Parent>();
 	Parent p1;
-	public fku() {
+	public caseStudyTest() {
 		p1= new Parent(21001234, "Pearlyn", 3, "E65H", "ohn", "ohn@gmail.com",87654321);
 		Student s1 = new Student("Amy", 210001234, 3, "E65H", "");
 		Admin a1 = new Admin("admin","admin");
