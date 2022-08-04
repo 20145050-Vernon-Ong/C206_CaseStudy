@@ -18,11 +18,11 @@ public class caseStudy {
 		caseStudy starting = new caseStudy(); 
 	       starting.start(); 
 	    }
-	} private void start() { 
+	private void start() { 
 		 
 	       adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
 	       //studentList.add(new Student("Earnest", 2003, 4, "C206")); 
-	       ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002"));
+	       ccaCordinatorList.add(new ccaCoordinator("Pearlyn", "Muay Thai", "pear3002"));
 	       ccaList.add(new CCA("BasketBall", "Sports", "BasketBall is a 10 player game", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn"));
 	 
 	       int option = -1; 
@@ -30,7 +30,7 @@ public class caseStudy {
 	    	   LoginMenu(); 
 	    	   option = Helper.readInt("Enter option > "); 
 	    	   if (option == 1) { 
-	    		   secondStart(); 
+	    		  // secondStart(); 
 	    		   } else if (option == 2) { 
 	    			   System.out.println("Closing...");
 	    		   } else { 
@@ -39,40 +39,40 @@ public class caseStudy {
 	      } 
 	     } 
 	    
-	    private void secondStart() { 
-	    	int secondOption = -1; 
-	    	while (secondOption != 7) { 
-	    		ASPMenu(); 
-	    	    secondOption = Helper.readInt("Enter option > "); 
-	    	    if (secondOption == 1) { 
-	    	        Admin login = getLoginAccount(adminList); 
-	    	        if (login != null) { 
-	    	             runSavingsProcess(login); 
-	    	        } 
-	    	    } else if (secondOption == 2) { 
-	    	         ccaCoordinator loginCordinator = getCCACordinatorAccount(ccaCoordinatorList); 
-	    	         if (loginCordinator != null) { 
-	    	             runSavingCordinatorProcess(loginCordinator); 
-	    	         }  
-	    	   } else if (secondOption == 3) { 
-	    		   Student loginStud = getloginStudent(studentList); 
-	    		   if (loginStud != null) { 
-	       	             runSavingStudentProcess(loginStud); 
-	       	       } 
-	    	   } else if (secondOption == 4) { 
-	    	       Student loginPar = getloginParent(ParentList); 
-	    	       if (loginPar != null) { 
-	    	             runSavingParentProcess(loginPar); 
-	    	       } 
-	    	   } else if (secondOption == 5) { 
-	    	  
-	    	   } else if (secondOption == 7) { 
-	    	     
-	    	   } else { 
-	    	    System.out.println("Invalid Option > "); 
-	    	   } 
-	     } 
-	   } 
+//	    private void secondStart() { 
+//	    	int secondOption = -1; 
+//	    	while (secondOption != 7) { 
+//	    		ASPMenu(); 
+//	    	    secondOption = Helper.readInt("Enter option > "); 
+//	    	    if (secondOption == 1) { 
+//	    	        Admin login = loginAdmin(adminList); 
+//	    	        if (login != null) { 
+//	    	             runSavingsProcess(login); 
+//	    	        } 
+//	    	    } else if (secondOption == 2) { 
+//	    	         ccaCoordinator loginCordinator = loginCCAcoord(ccaCordinatorList); 
+//	    	         if (loginCordinator != null) { 
+//	    	             runSavingCordinatorProcess(loginCordinator); 
+//	    	         }  
+//	    	   } else if (secondOption == 3) { 
+//	    		   Student loginStud = loginStudent(studentList); 
+//	    		   if (loginStud != null) { 
+//	       	             runSavingStudentProcess(loginStud); 
+//	       	       } 
+//	    	   } else if (secondOption == 4) { 
+//	    	       Student loginPar = loginParent(ParentList); 
+//	    	       if (loginPar != null) { 
+//	    	             runSavingParentProcess(loginPar); 
+//	    	       } 
+//	    	   } else if (secondOption == 5) { 
+//	    	  
+//	    	   } else if (secondOption == 7) { 
+//	    	     
+//	    	   } else { 
+//	    	    System.out.println("Invalid Option > "); 
+//	    	   } 
+//	     } 
+//	   } 
 	  
 	 
 	 //menus 
