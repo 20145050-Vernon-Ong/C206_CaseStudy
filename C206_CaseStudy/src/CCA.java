@@ -6,13 +6,15 @@ public class CCA {
 	private String description;
 	private int classSize;
 	private String day;
-	private LocalDateTime time;
+	private String time;
 	private String venue;
 	private String instructor;
+	private String category;
 	
-	public CCA(String title, String description, int classSize, String day, LocalDateTime time, String venue,
+	public CCA(String title, String category, String description, int classSize, String day, String time, String venue,
 			String instructor) {
 		this.title = title;
+		this.category = category;
 		this.description = description;
 		this.classSize = classSize;
 		this.day = day;
@@ -20,11 +22,19 @@ public class CCA {
 		this.venue = venue;
 		this.instructor = instructor;
 	}
+	
+	public CCA(String title) {
+		this.title = title;
+	}
 
 	public String getTitle() {
 		return title;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -37,7 +47,7 @@ public class CCA {
 		return day;
 	}
 
-	public LocalDateTime getTime() {
+	public String getTime() {
 		return time;
 	}
 

@@ -20,7 +20,8 @@ public class C206_CaseStudy {
  
        adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
        //studentList.add(new Student("Earnest", 2003, 4, "C206")); 
-       ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002")); 
+       ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002"));
+       ccaList.add(new CCA("BasketBall", "Sports", "BasketBall is a 10 player game", 20, "Wednesday", "5:00", "Sports Hall", "Pearlyn"));
  
        int option = -1; 
        while (option != 2) { 
@@ -132,6 +133,7 @@ public class C206_CaseStudy {
   System.out.println("3. Delete CCA Details"); 
   System.out.println("4. Log Out"); 
  } 
+ 
  
  private void runSavingsProcess(Admin loginAccount) { 
   int memberOption = -1; 
@@ -308,17 +310,19 @@ public class C206_CaseStudy {
 	  if (addGrade >= 4 && addGrade <= 6) { 
 	   String addName = Helper.readString("Add Student Name > "); 
 	   int addStudentID = Helper.readInt("Add Student ID > "); 
-	   String classRoom = Helper.readString("Add ClassRoom > "); 
-	   studentList.add(new Student(addName, addStudentID, addGrade, classRoom)); 
+	   String classRoom = Helper.readString("Add ClassRoom > ");
+	   String cca = Helper.readString("Enter CCA Name > ");
+	   studentList.add(new Student(addName, addStudentID, addGrade, classRoom, cca)); 
 	  } else if (addGrade <= 3 && addGrade >= 1) { 
 	   String addName = Helper.readString("Add Student Name > "); 
 	   int addStudentID = Helper.readInt("Add Student ID > "); 
 	   String classRoom = Helper.readString("Add ClassRoom > "); 
 	   String addParent = Helper.readString("Add Parent Name > "); 
 	   String addEmail = Helper.readString("Add Parent Email > "); 
-	   int contact = Helper.readInt("Add Contact Number > "); 
+	   int contact = Helper.readInt("Add Contact Number > ");
+	   String cca = Helper.readString("Enter CCA Name > ");
 	   studentList.add(new Student(addName, addStudentID, addGrade, classRoom,  
-	     addParent, addEmail, contact)); 
+	     addParent, addEmail, contact, cca)); 
 	  } else { 
 	   System.out.println("Invalid Grade"); 
 	  } 

@@ -1,5 +1,5 @@
 
-public class Student {
+public class Student extends CCA{
 	
 	private String name;
 	private int studentID;
@@ -8,8 +8,10 @@ public class Student {
 	private String parentName;
 	private String parentEmail;
 	private int contactNo;
+	private int registerationID;
 	// P4 and Above
-	public Student(String name, int studentID, int grade, String classRoom) {
+	public Student(String name, int studentID, int grade, String classRoom, String title) {
+		super(title);
 		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
@@ -17,7 +19,8 @@ public class Student {
 	}
 	// P3 and Below
 	public Student(String name, int studentID, int grade, String classRoom, String parentName, String parentEmail,
-			int contactNo) {
+			int contactNo, String title) {
+		super(title);
 		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
