@@ -199,15 +199,14 @@ public class C206_CaseStudy {
 	  while (memberOption != 4) { 
 	   memberOption = Helper.readInt("Enter choice  > "); 
 	   if (memberOption == 1) { 
-		   viewCCADetails();
+		   ccaCordinatorPage();
 	   } else if (memberOption == 2) { 
-		   addCCADetails();
+		   
 	   } else if (memberOption == 3) { 
-		   editCCADetails();
 	   } else if (memberOption == 4) {
-		   deleteCCADetails();
+		   
 	   } else if (memberOption == 5) { 
-	    System.out.println("Logging Out"); 
+	    System.out.println("Logging Out");
 	   } else { 
 	    System.out.println("Invalid Option"); 
 	   } 
@@ -306,7 +305,30 @@ public class C206_CaseStudy {
 	   } 
 	  } 
 	   
-	 } 
+	 }
+	 
+	 private void ccaCordinatorPage() {
+		 
+		 int option = -1;
+		 
+		 while (option != 5) {
+			 ccaCordinatorMenu();
+			 option = Helper.readInt("Enter option > ");
+			 if (option == 1) {
+				 viewCCADetails();
+			 } else if (option == 2) {
+				 addCCADetails();
+			 } else if (option == 3) {
+				 editCCADetails();
+			 } else if (option == 4) {
+				 deleteCCADetails();
+			 } else if (option == 5) {
+				 ccaCordinatorMenu();
+			 } else {
+				 System.out.println("Invalid Option");
+			 }
+		 }
+	 }
 	  
 	 private void RegisterStudent() {  
 	  int addGrade = Helper.readInt("Add Grade >"); 
@@ -391,7 +413,7 @@ public class C206_CaseStudy {
 	 }
 	 
 	 private void editCCADetails() {
-		 
+		 String
 	 }
 
 	 private void deleteCCADetails() {
