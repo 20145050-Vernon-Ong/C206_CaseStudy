@@ -137,14 +137,16 @@ public class C206_CaseStudy {
 	private void runSavingsProcess(Admin loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 3) {
+		while (memberOption != 4) {
 			memberOption = Helper.readInt("Enter choice > "); 
 
 			if (memberOption == 1) { 
 				StudentPage(); 
 			} else if (memberOption == 2) { 
-
-			} else if (memberOption == 3) { 
+			
+			} else if (memberOption == 3) {
+				
+			} else if (memberOption == 4) { 
 				System.out.println("Logging out."); 
 
 			} else { 
@@ -197,14 +199,16 @@ public class C206_CaseStudy {
 		int memberOption = -1; 
 
 		while (memberOption != 4) { 
+			ccaCordinatorMenu();
 			memberOption = Helper.readInt("Enter choice  > "); 
 			if (memberOption == 1) { 
-				ccaCordinatorPage();
+				viewCCADetails();
 			} else if (memberOption == 2) { 
-
+				addCCADetails();
 			} else if (memberOption == 3) { 
+				editCCADetails();
 			} else if (memberOption == 4) {
-
+				deleteCCADetails();
 			} else if (memberOption == 5) { 
 				System.out.println("Logging Out");
 			} else { 
@@ -312,7 +316,6 @@ public class C206_CaseStudy {
 		int option = -1;
 
 		while (option != 5) {
-			ccaCordinatorMenu();
 			option = Helper.readInt("Enter option > ");
 			if (option == 1) {
 				viewCCADetails();
