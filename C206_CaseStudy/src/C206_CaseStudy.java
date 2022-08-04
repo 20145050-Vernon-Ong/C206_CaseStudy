@@ -110,7 +110,7 @@ public class C206_CaseStudy {
 			memberOption = Helper.readInt("Enter choice > ");
 
 			if (memberOption == 1) {
-				StudentPage();
+				
 			} else if (memberOption == 2) {
 				
 			} else if (memberOption == 3) {
