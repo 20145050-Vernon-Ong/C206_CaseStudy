@@ -108,16 +108,9 @@ public class C206_CaseStudy {
 				StudentPage();
 			} else if (memberOption == 2) {
 				
-
 			} else if (memberOption == 3) {
-				
-				
-			} else if (memberOption == 4) {
-				
-			} else if (memberOption == 5) {
-				
-			} else if (memberOption == 6) {
 				System.out.println("Logging out.");
+					
 			} else {
 				System.out.println("Invalid Option");
 			}
