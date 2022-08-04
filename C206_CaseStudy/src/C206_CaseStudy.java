@@ -365,11 +365,11 @@ public class C206_CaseStudy {
 	 //CCA Cordinator Section
 	 private void viewCCADetails() {
 		 String output = "";
-		 output += String.format("%s %s %s %s %s %s %s %s", 
+		 output += String.format("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %s\n", 
 				 "CCA TITLE", "CCA CATEGORY", "CCA DESCRIPTION", "CLASS SIZE",
 				 "CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR");
 		 for (CCA c : ccaList) {
-			 output += String.format("%s %s %s %d %s %.2f %s %s", c.getTitle(), 
+			 output += String.format("%-10s %-10s %-10s %-10d %-10s %-10.2f %-10s %s\n", c.getTitle(), 
 					 c.getCategory(), c.getDescription(), c.getClassSize(),
 					 c.getDay(), c.getTime(), c.getVenue(), c.getInstructor());
 		 }
