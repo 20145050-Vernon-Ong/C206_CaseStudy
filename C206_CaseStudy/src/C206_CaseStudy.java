@@ -20,7 +20,7 @@ public class C206_CaseStudy {
 
 		adminList.add(new Admin("Vernon Ong", "verC206DIT")); 
 		//studentList.add(new Student("Earnest", 2003, 4, "C206")); 
-		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pear3002"));
+		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
 		ccaList.add(new CCA("BasketBall", "Sports", "BasketBall is a 10 player game", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn"));
 
 		int option = -1; 
@@ -199,7 +199,6 @@ public class C206_CaseStudy {
 		int memberOption = -1; 
 
 		while (memberOption != 4) { 
-			ccaCordinatorMenu();
 			memberOption = Helper.readInt("Enter choice  > "); 
 			if (memberOption == 1) { 
 				viewCCADetails();
