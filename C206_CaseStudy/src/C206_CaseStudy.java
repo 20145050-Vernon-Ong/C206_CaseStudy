@@ -120,7 +120,7 @@ public class C206_CaseStudy {
 	private void runSavingsProcess(Admin loginAccount) {
 		int memberOption = -1;
 		
-		while (memberOption != 6) {
+		while (memberOption != 3) {
 			memberOption = Helper.readInt("Enter choice > ");
 
 			if (memberOption == 1) {
