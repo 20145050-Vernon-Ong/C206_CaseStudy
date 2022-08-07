@@ -415,13 +415,13 @@ public class C206_CaseStudy {
 			ccaCategoryMenu();
 			option = Helper.readInt("Enter choice > ");
 			if (option == 1) {
-				
+				addCCACategory();
 			} else if (option == 2) {
-				
+				viewCCACategory();
 			} else if (option == 3) {
-				
+				editCCACategory();
 			} else if (option == 4) {
-				
+				deleteCCACategory();
 			} else if (option == 5) {
 				cordinatorMainMenu();
 			} else {
