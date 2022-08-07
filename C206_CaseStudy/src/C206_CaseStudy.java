@@ -154,7 +154,7 @@ public class C206_CaseStudy {
 			} else if (memberOption == 2) { 
 				ParentsPage();
 			} else if (memberOption == 3) {
-				
+				CCACordinatorPage();
 			} else if (memberOption == 4) { 
 				System.out.println("Logging out."); 
 
@@ -339,6 +339,34 @@ public class C206_CaseStudy {
 			} else if (option == 3) {
 				
 			} else if (option == 4){ 
+				AdminMenu(); 
+			} else { 
+				System.out.println("Invalid Option"); 
+			} 
+		}
+	}
+	
+	private void CCACordinatorPage() {
+		int option = -1; 
+
+		while (option != 4) { 
+			Helper.line(30, "="); 
+			System.out.println("CCA Cordinator PAGE"); 
+			Helper.line(30, "="); 
+			System.out.println("2. Add CCA Cordinator"); 
+			System.out.println("3. View All CCA Cordinator"); 
+			System.out.println("4. Delete CCA Cordinator");
+			System.out.println("5. Go to Main Page"); 
+			option = Helper.readInt("Enter option > "); 
+			if (option == 1) { 
+				
+			} else if (option == 2) {
+				
+			} else if (option == 3) {
+				
+			} else if (option == 4) {
+		
+			} else if (option == 5){ 
 				AdminMenu(); 
 			} else { 
 				System.out.println("Invalid Option"); 
