@@ -28,6 +28,8 @@ public class C206_CaseStudy {
 				"Chirs Lai", "Judo is a grappling style martial arts"));
 		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", "5.00-7.00", "Sports Hall", 
 				"David Ng", "BasketBall is a 10 player game"));
+		ccaList.add(new CCA("Archery", "Sports", 40, "Friday", "5.00-8.00", "Soccer Field",
+				"George Lim", "Achery is about using Bow and Arrows"));
 		
 		int option = -1; 
 		while (option != 2) { 
