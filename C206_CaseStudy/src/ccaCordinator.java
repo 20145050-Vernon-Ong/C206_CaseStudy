@@ -1,13 +1,11 @@
 
 public class ccaCordinator extends CCA { 
 	
-	
-	private String CCAassigned; 
+	 
 	private String password; 
 	
 	public ccaCordinator(String instructor, String title, String password) {
-		super(title, instructor);
-		CCAassigned = title; 
+		super(title, instructor); 
 		this.password = password; 
     } 
 	
@@ -16,7 +14,7 @@ public class ccaCordinator extends CCA {
 	}
 	
     public String getCCAassigned() { 
-    	return CCAassigned; 
+    	return title; 
     } 
     
     public String getPassword() { 

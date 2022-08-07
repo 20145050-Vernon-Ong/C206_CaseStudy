@@ -328,17 +328,15 @@ public class C206_CaseStudy {
 			Helper.line(30, "="); 
 			System.out.println("Parents PAGE"); 
 			Helper.line(30, "="); 
-			System.out.println("2. View Parents"); 
-			System.out.println("3. Delete Parents"); 
-			System.out.println("4. Go to Main Page"); 
+			System.out.println("1. View Parents"); 
+			System.out.println("2. Delete Parents"); 
+			System.out.println("3. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
 			if (option == 1) { 
 				
 			} else if (option == 2) {
 				
-			} else if (option == 3) {
-				
-			} else if (option == 4){ 
+			} else if (option == 3){ 
 				AdminMenu(); 
 			} else { 
 				System.out.println("Invalid Option"); 
@@ -353,20 +351,18 @@ public class C206_CaseStudy {
 			Helper.line(30, "="); 
 			System.out.println("CCA Cordinator PAGE"); 
 			Helper.line(30, "="); 
-			System.out.println("2. Add CCA Cordinator"); 
-			System.out.println("3. View All CCA Cordinator"); 
-			System.out.println("4. Delete CCA Cordinator");
-			System.out.println("5. Go to Main Page"); 
+			System.out.println("1. Add CCA Cordinator"); 
+			System.out.println("2. View All CCA Cordinator"); 
+			System.out.println("3. Delete CCA Cordinator");
+			System.out.println("4. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
 			if (option == 1) { 
 				
 			} else if (option == 2) {
-				
+				viewAllCCACordinator();
 			} else if (option == 3) {
 				
-			} else if (option == 4) {
-		
-			} else if (option == 5){ 
+			} else if (option == 4){ 
 				AdminMenu(); 
 			} else { 
 				System.out.println("Invalid Option"); 
@@ -523,6 +519,16 @@ public class C206_CaseStudy {
 	}
 
 	//CCA Cordinator Section
+	private void viewAllCCACordinator() {
+		Helper.line(50, "=");
+		System.out.println("VIEW ALL CCA CORDINATOR");
+		Helper.line(50, "=");
+		String output = String.format("%-10s %-10s\n", "NAME", "CCA ASSIGNED");
+		for (ccaCordinator c : ccaCordinatorList) {
+			output += String.format("%-10s %-10s\n", c.getInstructor(), c.getCCAassigned());
+		}
+		System.out.println(output);
+	} 
 	
 	
 	

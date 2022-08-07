@@ -1,7 +1,7 @@
 
 public class CCA {
 	
-	private String title;
+	public String title;
 	private String description;
 	private int classSize;
 	private String day;
