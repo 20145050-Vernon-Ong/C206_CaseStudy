@@ -133,14 +133,34 @@ public class C206_CaseStudy {
 
 	private static void ccaCordinatorMenu() { 
 		Helper.line(30, "="); 
-		System.out.println("CCA Registration System"); 
+		System.out.println("CCA Details Page"); 
 		Helper.line(30, "=");
 		System.out.println("1. View CCA Details");
 		System.out.println("2. Add CCA Details"); 
 		System.out.println("3. Edit CCA Details"); 
 		System.out.println("4. Delete CCA Details"); 
-		System.out.println("5. Log Out"); 
+		System.out.println("5. Go to CCA Cordinator Menu"); 
 	} 
+	
+	private static void ccaCategoryMenu() {
+		Helper.line(30, "="); 
+		System.out.println("CCA Category Page"); 
+		Helper.line(30, "=");
+		System.out.println("1. View CCA Category");
+		System.out.println("2. Add CCA Category"); 
+		System.out.println("3. Edit CCA Category"); 
+		System.out.println("4. Delete CCA Category"); 
+		System.out.println("5. Go to CCA Cordinator Menu");
+	}
+	
+	private static void cordinatorMainMenu() {
+		Helper.line(30, "="); 
+		System.out.println("CCA Cordinator Menu"); 
+		Helper.line(30, "=");
+		System.out.println("1. View CCA Detail Page");
+		System.out.println("2. View CCA Category Page"); 
+		System.out.println("3. Log Out");
+	}
 
 
 	private void runSavingsProcess(Admin loginAccount) { 
@@ -206,19 +226,13 @@ public class C206_CaseStudy {
 
 	private void runSavingCordinatorProcess(ccaCordinator loginAccount) { 
 		int memberOption = -1; 
-
-		while (memberOption != 5) {
-			ccaCordinatorMenu();
+		while (memberOption != 3) {
 			memberOption = Helper.readInt("Enter choice  > "); 
-			if (memberOption == 1) { 
-				viewCCADetails();
+			if (memberOption == 1) {
+				cordinatorPage();
 			} else if (memberOption == 2) { 
-				addCCADetails();
+				categoryPage();
 			} else if (memberOption == 3) { 
-				editCCADetails();
-			} else if (memberOption == 4) {
-				deleteCCADetails();
-			} else if (memberOption == 5) { 
 				System.out.println("Logging Out");
 			} else { 
 				System.out.println("Invalid Option"); 
@@ -285,7 +299,8 @@ public class C206_CaseStudy {
 			String enterName = Helper.readString("Enter Name > "); 
 			String password = Helper.readString("Enter password > "); 
 			if (c.login(enterName, password) == true) { 
-				loginAccount = c;  
+				loginAccount = c;
+				cordinatorMainMenu();
 				break; 
 			} else if (c.login(enterName, password) == false) { 
 				System.out.println("Name or Password entered is incorrect please login again !"); 
@@ -357,7 +372,7 @@ public class C206_CaseStudy {
 			System.out.println("4. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
 			if (option == 1) { 
-				
+				addCCACordinator();
 			} else if (option == 2) {
 				viewAllCCACordinator();
 			} else if (option == 3) {
@@ -367,6 +382,49 @@ public class C206_CaseStudy {
 			} else { 
 				System.out.println("Invalid Option"); 
 			} 
+		}
+	}
+	
+	private void cordinatorPage() {
+		int memberOption = -1;
+		while (memberOption != 5) {
+			ccaCordinatorMenu();
+			memberOption = Helper.readInt("Enter choice  > "); 
+			if (memberOption == 1) { 
+				viewCCADetails();
+			} else if (memberOption == 2) { 
+				addCCADetails();
+			} else if (memberOption == 3) { 
+				editCCADetails();
+			} else if (memberOption == 4) {
+				deleteCCADetails();
+			} else if (memberOption == 5) { 
+				cordinatorMainMenu();
+			} else { 
+				System.out.println("Invalid Option"); 
+			} 
+		}
+	}
+	
+	private void categoryPage() {
+		int option = -1;
+		
+		while (option != 5) {
+			ccaCategoryMenu();
+			option = Helper.readInt("Enter choice > ");
+			if (option == 1) {
+				
+			} else if (option == 2) {
+				
+			} else if (option == 3) {
+				
+			} else if (option == 4) {
+				
+			} else if (option == 5) {
+				cordinatorMainMenu();
+			} else {
+				System.out.println("Invalid Option");
+			}
 		}
 	}
 
@@ -479,6 +537,7 @@ public class C206_CaseStudy {
 					System.out.println("4. Edit CCA Venue");
 					System.out.println("5. Edit CCA Instructor");
 					System.out.println("6. Go Back to CCA Cordinator Page");
+					option = Helper.readInt("Enter option > ");
 					if (option == 1) {
 						String editDescribe = Helper.readString("Edit CCA Description > ");
 						c.setDescription(editDescribe);
@@ -495,7 +554,7 @@ public class C206_CaseStudy {
 						String editInstructor = Helper.readString("Edit CCA Instructor > ");
 						c.setInstructor(editInstructor);
 					} else if (option == 6) {
-						ccaCordinatorMenu();
+						cordinatorPage();
 					} else {
 						System.out.println("Invalid Option");
 					}
@@ -519,6 +578,17 @@ public class C206_CaseStudy {
 	}
 
 	//CCA Cordinator Section
+	private void addCCACordinator() {
+		Helper.line(50, "=");
+		System.out.println("ADD CCA CORDINATOR");
+		Helper.line(50, "=");
+		String instructorName = Helper.readString("Enter Instructor Name > ");
+		String CCAAssigned = Helper.readString("Enter Assigned CCA > ");
+		String password = Helper.readString("Register Password > ");
+		ccaCordinatorList.add(new ccaCordinator(instructorName, CCAAssigned, password));
+	}
+	
+	
 	private void viewAllCCACordinator() {
 		Helper.line(50, "=");
 		System.out.println("VIEW ALL CCA CORDINATOR");
