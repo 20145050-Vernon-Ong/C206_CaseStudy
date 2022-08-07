@@ -10,6 +10,8 @@ public class C206_CaseStudy {
 	ArrayList<ccaCordinator> ccaCordinatorList = new ArrayList<ccaCordinator>(); 
 
 	ArrayList<CCA> ccaList = new ArrayList<CCA>(); 
+	
+	ArrayList<ccaCategory> ccaCategoryList = new ArrayList<ccaCategory>();
 
 	public static void main(String[] args) { 
 		// TODO Auto-generated method stub 
@@ -599,6 +601,23 @@ public class C206_CaseStudy {
 		}
 		System.out.println(output);
 	} 
+	
+	private void addCCACategory() {
+		String addCate = Helper.readString("Enter category");
+		ccaCategoryList.add(new ccaCategory(addCate));
+	}
+	
+	private void viewCCACategory() {
+		
+	}
+	
+	private void deleteCCACategory() {
+		
+	}
+	
+	private void editCCACategory() {
+		
+	}
 	
 	
 	
