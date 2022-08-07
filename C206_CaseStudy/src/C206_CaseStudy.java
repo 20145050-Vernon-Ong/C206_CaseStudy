@@ -152,7 +152,7 @@ public class C206_CaseStudy {
 			if (memberOption == 1) { 
 				StudentPage(); 
 			} else if (memberOption == 2) { 
-			
+				ParentsPage();
 			} else if (memberOption == 3) {
 				
 			} else if (memberOption == 4) { 
@@ -300,10 +300,10 @@ public class C206_CaseStudy {
 
 		while (option != 4) { 
 			Helper.line(30, "="); 
-			System.out.println("CCA CORDINATOR PAGE"); 
+			System.out.println("Student PAGE"); 
 			Helper.line(30, "="); 
 			System.out.println("1. Add Student"); 
-			System.out.println("2. view Student"); 
+			System.out.println("2. View Student"); 
 			System.out.println("3. Delete Student"); 
 			System.out.println("4. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
@@ -313,6 +313,31 @@ public class C206_CaseStudy {
 				viewStudent(); 
 			} else if (option == 3) {
 				deleteStudent();
+			} else if (option == 4){ 
+				AdminMenu(); 
+			} else { 
+				System.out.println("Invalid Option"); 
+			} 
+		}
+	}
+	
+	private void ParentsPage() {
+		int option = -1; 
+
+		while (option != 4) { 
+			Helper.line(30, "="); 
+			System.out.println("Parents PAGE"); 
+			Helper.line(30, "="); 
+			System.out.println("2. View Parents"); 
+			System.out.println("3. Delete Parents"); 
+			System.out.println("4. Go to Main Page"); 
+			option = Helper.readInt("Enter option > "); 
+			if (option == 1) { 
+				
+			} else if (option == 2) {
+				
+			} else if (option == 3) {
+				
 			} else if (option == 4){ 
 				AdminMenu(); 
 			} else { 
