@@ -228,7 +228,10 @@ public class C206_CaseStudy {
 	//logins 
 	private static Admin getLoginAccount(ArrayList<Admin> adminList) { 
 		Admin loginAccount = null; 
-		for (Admin a : adminList) { 
+		for (Admin a : adminList) {
+			Helper.line(50, "=");
+			System.out.println("LOGIN AS ADMIN");
+			Helper.line(50, "=");
 			String enterName = Helper.readString("Enter Name > "); 
 			String enterPass = Helper.readString("Enter password > "); 
 			if (a.login(enterName, enterPass) == true) { 
@@ -282,8 +285,7 @@ public class C206_CaseStudy {
 			String enterName = Helper.readString("Enter Name > "); 
 			String password = Helper.readString("Enter password > "); 
 			if (c.login(enterName, password) == true) { 
-				loginAccount = c; 
-				ccaCordinatorMenu(); 
+				loginAccount = c;  
 				break; 
 			} else if (c.login(enterName, password) == false) { 
 				System.out.println("Name or Password entered is incorrect please login again !"); 
@@ -376,11 +378,11 @@ public class C206_CaseStudy {
 		System.out.println("View CCA DETAILS");
 		Helper.line(50, "=");
 		String output = "";
-		output += String.format("%-10s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
+		output += String.format("%-10s %-13s %-13s %-13s %-13s %-20s %-15s %s\n", 
 				"CCA TITLE", "CCA CATEGORY", "CLASS SIZE",
 				"CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR", "CCA DESCRIPTION");
 		for (CCA c : ccaList) {
-			output += String.format("%-10s %-15s %-15d %-15s %-15.2f %-15s %-15s %s\n", c.getTitle(), 
+			output += String.format("%-10s %-13s %-13d %-13s %-13s %-20s %-15s %s\n", c.getTitle(), 
 					c.getCategory(), c.getClassSize(), c.getDay(), 
 					c.getTime(), c.getVenue(), c.getInstructor(), c.getDescription());
 		}
@@ -408,7 +410,7 @@ public class C206_CaseStudy {
 				String addDescribe = Helper.readString("Enter CCA Description > ");
 				ccaList.add(new CCA(addTitle, addCategory, addClassSize, addDay, addTime, venue, instructor, addDescribe));
 			} else {
-				
+				System.out.println("Invalid Day");
 			}
 		}
 	}
