@@ -617,7 +617,12 @@ public class C206_CaseStudy {
 	}
 	
 	private void deleteCCACategory() {
-		
+		String delCate = Helper.readString("Enter category > ");
+		for (int i = 0; i < ccaCategoryList.size(); i++) {
+			if (ccaCategoryList.get(i).getCategory().equals(delCate)) {
+				ccaCategoryList.remove(i);
+			}
+		}
 	}
 	
 	private void editCCACategory() {
