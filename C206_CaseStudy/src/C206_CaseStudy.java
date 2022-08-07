@@ -1,4 +1,5 @@
-import java.util.ArrayList; 
+import java.util.ArrayList;
+import java.util.regex.Pattern; 
 
 public class C206_CaseStudy { 
 	// ArrayList 
@@ -206,7 +207,8 @@ public class C206_CaseStudy {
 	private void runSavingCordinatorProcess(ccaCordinator loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 5) { 
+		while (memberOption != 5) {
+			ccaCordinatorMenu();
 			memberOption = Helper.readInt("Enter choice  > "); 
 			if (memberOption == 1) { 
 				viewCCADetails();
@@ -290,13 +292,13 @@ public class C206_CaseStudy {
 		return loginAccount; 
 	} 
 
-	// Student Section 
-	private void StudentPage() { 
+	// Student Section
+	private void StudentPage() {
 		int option = -1; 
 
 		while (option != 4) { 
 			Helper.line(30, "="); 
-			System.out.println("STUDENT PAGE"); 
+			System.out.println("CCA CORDINATOR PAGE"); 
 			Helper.line(30, "="); 
 			System.out.println("1. Add Student"); 
 			System.out.println("2. view Student"); 
@@ -314,8 +316,7 @@ public class C206_CaseStudy {
 			} else { 
 				System.out.println("Invalid Option"); 
 			} 
-		} 
-
+		}
 	}
 
 	private void RegisterStudent() {  
@@ -370,9 +371,6 @@ public class C206_CaseStudy {
 	} 
 
 	// CCA Section 
-
-
-	//CCA Cordinator Section
 	private void viewCCADetails() {
 		Helper.line(50, "=");
 		System.out.println("View CCA DETAILS");
@@ -397,12 +395,22 @@ public class C206_CaseStudy {
 		String addTitle = Helper.readString("Enter CCA Title > ");
 		String addCategory = Helper.readString("Enter CCA Category > ");
 		int addClassSize = Helper.readInt("Enter CCA Class Size > ");
-		String addDay = Helper.readString("Enter CCA Day > ");
-		String addTime = Helper.readString("Enter CCA Time > ");
-		String venue = Helper.readString("Enter CCA Venue > ");
-		String instructor = Helper.readString("Enter CCA instructor > " );
-		String addDescribe = Helper.readString("Enter CCA Description > ");
-		ccaList.add(new CCA(addTitle, addCategory, addClassSize, addDay, addTime, venue, instructor, addDescribe));
+		if (addClassSize > 50) {
+			System.out.println("Class Size cannot be more than 50.");
+		} else {
+			String addDay = Helper.readString("Enter CCA Day > ");
+			String regexDay = "(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)(day)";
+			boolean matchDay = Pattern.matches(regexDay, addDay);
+			if (matchDay == true) {
+				String addTime = Helper.readString("Enter CCA Time > ");
+				String venue = Helper.readString("Enter CCA Venue > ");
+				String instructor = Helper.readString("Enter CCA instructor > " );
+				String addDescribe = Helper.readString("Enter CCA Description > ");
+				ccaList.add(new CCA(addTitle, addCategory, addClassSize, addDay, addTime, venue, instructor, addDescribe));
+			} else {
+				
+			}
+		}
 	}
 
 	private void editCCADetails() {
@@ -459,7 +467,7 @@ public class C206_CaseStudy {
 
 	}
 
-	//were
+	//CCA Cordinator Section
 	
 	
 	
