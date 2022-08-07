@@ -415,9 +415,9 @@ public class C206_CaseStudy {
 			ccaCategoryMenu();
 			option = Helper.readInt("Enter choice > ");
 			if (option == 1) {
-				addCCACategory();
-			} else if (option == 2) {
 				viewCCACategory();
+			} else if (option == 2) {
+				addCCACategory();
 			} else if (option == 3) {
 				editCCACategory();
 			} else if (option == 4) {
@@ -603,12 +603,17 @@ public class C206_CaseStudy {
 	} 
 	
 	private void addCCACategory() {
-		String addCate = Helper.readString("Enter category");
+		String addCate = Helper.readString("Enter category > ");
 		ccaCategoryList.add(new ccaCategory(addCate));
 	}
 	
 	private void viewCCACategory() {
+		String output = String.format("%-10s\n", "CATEGORY");
+		for (ccaCategory c : ccaCategoryList) {
+			output += String.format("%-10s\n", c.getCategory());
+		}
 		
+		System.out.println(output);
 	}
 	
 	private void deleteCCACategory() {
