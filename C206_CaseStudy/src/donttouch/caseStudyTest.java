@@ -1,12 +1,21 @@
-package mytry;
+package donttouch;
+
 
 import static org.junit.Assert.*;
+
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import Admin;
+import Student;
+import mytry.Parent;
+import mytry.caseStudy;
+import mytry.ccaCoordinator;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;

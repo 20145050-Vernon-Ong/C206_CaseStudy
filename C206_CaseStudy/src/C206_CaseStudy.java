@@ -17,9 +17,17 @@ public class C206_CaseStudy {
 	}
 
 	private void start() { 
-		adminList.add(new Admin("Vernon Ong", "verC206DIT"));  
-		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn3002"));
-		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", 5.00, "Sports Hall", "Pearlyn", "BasketBall is a 10 player game"));
+		adminList.add(new Admin("Vernon Ong", "verC206DIT"));
+		
+		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn"));
+		ccaCordinatorList.add(new ccaCordinator("Earnest", "Floorball", "earnest"));
+		ccaCordinatorList.add(new ccaCordinator("Hew Rui", "Band", "rui"));
+		ccaCordinatorList.add(new ccaCordinator("Sachin", "SOI CLub", "sachin"));
+		
+		ccaList.add(new CCA("Judo", "Sports", 30, "Thursday", "6.00-8.00", "Martial Arts Room", 
+				"Chirs Lai", "Judo is a grappling style martial arts"));
+		ccaList.add(new CCA("BasketBall", "Sports", 20, "Wednesday", "5.00-7.00", "Sports Hall", 
+				"David Ng", "BasketBall is a 10 player game"));
 		
 		int option = -1; 
 		while (option != 2) { 
@@ -364,12 +372,15 @@ public class C206_CaseStudy {
 
 	//CCA Cordinator Section
 	private void viewCCADetails() {
+		Helper.line(50, "=");
+		System.out.println("View CCA DETAILS");
+		Helper.line(50, "=");
 		String output = "";
-		output += String.format("%-10s %-10s %-10s %-10s %-10s %-10s %-10s %s\n", 
-				"CCA TITLE", "CCA CATEGORY", "CCA DESCRIPTION", "CLASS SIZE",
-				"CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR");
+		output += String.format("%-10s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
+				"CCA TITLE", "CCA CATEGORY", "CLASS SIZE",
+				"CCA DAY", "CCA TIME", "CCA VENUE", "CCA INSTRUCTOR", "CCA DESCRIPTION");
 		for (CCA c : ccaList) {
-			output += String.format("%-10s %-10s %-10d %-10s %-10.2f %-10s %-10s %s\n", c.getTitle(), 
+			output += String.format("%-10s %-15s %-15d %-15s %-15.2f %-15s %-15s %s\n", c.getTitle(), 
 					c.getCategory(), c.getClassSize(), c.getDay(), 
 					c.getTime(), c.getVenue(), c.getInstructor(), c.getDescription());
 		}
@@ -383,16 +394,19 @@ public class C206_CaseStudy {
 		Helper.line(50, "=");
 		String addTitle = Helper.readString("Enter CCA Title > ");
 		String addCategory = Helper.readString("Enter CCA Category > ");
-		String addDescribe = Helper.readString("Enter CCA Description > ");
 		int addClassSize = Helper.readInt("Enter CCA Class Size > ");
 		String addDay = Helper.readString("Enter CCA Day > ");
-		double addTime = Helper.readDouble("Enter CCA Time > ");
+		String addTime = Helper.readString("Enter CCA Time > ");
 		String venue = Helper.readString("Enter CCA Venue > ");
 		String instructor = Helper.readString("Enter CCA instructor > " );
+		String addDescribe = Helper.readString("Enter CCA Description > ");
 		ccaList.add(new CCA(addTitle, addCategory, addClassSize, addDay, addTime, venue, instructor, addDescribe));
 	}
 
 	private void editCCADetails() {
+		Helper.line(50, "=");
+		System.out.println("Edit CCA DETAILS");
+		Helper.line(50, "=");
 		int option = -1;
 		for (CCA c : ccaList) {
 			String ccaTitle = Helper.readString("Enter CCA Title > ");
@@ -411,7 +425,7 @@ public class C206_CaseStudy {
 						String editDay = Helper.readString("Edit CCA Day > ");
 						c.setDay(editDay);
 					} else if (option == 3) {
-						double editTime = Helper.readDouble("Edit CCA Time > ");
+						String editTime = Helper.readString("Edit CCA Time > ");
 						c.setTime(editTime);
 					} else if (option == 4) {
 						String editVenue = Helper.readString("Edit CCA Venue > ");
@@ -430,10 +444,12 @@ public class C206_CaseStudy {
 	}
 
 	private void deleteCCADetails() {
-
+		Helper.line(50, "=");
+		System.out.println("Delete CCA DETAILS");
+		Helper.line(50, "=");
 		String delCCATitle = Helper.readString("Enter CCA details to delete > ");
 		for (int i = 0; i < ccaList.size(); i++) {
-			if (ccaList.get(i).getTitle().contains(delCCATitle)) {
+			if (ccaList.get(i).getTitle().equals(delCCATitle)) {
 				ccaList.remove(i);
 				break;
 			}
