@@ -6,8 +6,8 @@ public class parents extends Student {
 	private int contactNo;
 
 	public parents(String ParentName, String ParentEmail, int contactNo, String name, int studentID,
-			int grade, String classRoom, String title) {
-		super(name, studentID, grade, classRoom, title);
+			int grade, String classRoom, String Teacher, String title) {
+		super(name, studentID, grade, classRoom, Teacher, title);
 		this.ParentName = ParentName;
 		this.ParentEmail = ParentEmail;
 		this.contactNo = contactNo;

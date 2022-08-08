@@ -7,16 +7,18 @@ public class Student extends CCA{
 	private String classRoom;
 	private int contactNo;
 	private int registerationID;
+	private String teacher;
 	
 	// P4 and Above
-	public Student(String name, int studentID, int grade, String classRoom, String title) {
+	public Student(String name, int studentID, int grade, String classRoom, String Teacher, String title) {
 		super(title);
 		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
 		this.classRoom = classRoom;
+		this.teacher = Teacher;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -31,6 +33,10 @@ public class Student extends CCA{
 	
 	public String getClassRoom() {
 		return classRoom;
+	}
+	
+	public String getTeacher() {
+		return teacher;
 	}
 	
 	public int getContactNo() {
