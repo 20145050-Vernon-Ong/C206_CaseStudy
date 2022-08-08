@@ -31,6 +31,10 @@ public class CCA {
 		this.title = title;
 	}
 	
+	public CCA() {
+		
+	}
+	
 	public String getTitle() {
 		return title;
 	}

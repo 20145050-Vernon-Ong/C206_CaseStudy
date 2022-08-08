@@ -17,6 +17,15 @@ public class Student extends CCA{
 		this.grade = grade;
 		this.classRoom = classRoom;
 		this.teacher = Teacher;
+		
+	}
+	
+	public Student(String name, int studentID, int grade, String classRoom, String Teacher) {
+		this.name = name;
+		this.studentID = studentID;
+		this.grade = grade;
+		this.classRoom = classRoom;
+		this.teacher = Teacher;
 	}
 
 	public String getName() {

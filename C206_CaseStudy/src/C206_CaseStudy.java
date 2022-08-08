@@ -641,7 +641,13 @@ public class C206_CaseStudy {
 		boolean matchEmail = Pattern.matches(regex, regParentEmail);
 		if (matchEmail == true) {
 			int contactNo = Helper.readInt("Enter contact number > ");
-			
+			String childName = Helper.readString("Enter your child name > ");
+			int studentID = Helper.readInt("Enter your child student ID > ");
+			int studentG = Helper.readInt("Enter student grade > ");
+			String classRoom = Helper.readString("Enter class room > ");
+			String teacher = Helper.readString("Enter class room teacher > ");
+			parentList.add(new parents(regParentName, regParentEmail, contactNo, childName,
+					studentID, studentG, classRoom, teacher));
 		}
 		
 	}
