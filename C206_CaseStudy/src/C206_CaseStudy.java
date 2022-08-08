@@ -105,7 +105,7 @@ public class C206_CaseStudy {
 		System.out.println("CCA Registration System"); 
 		Helper.line(30, "="); 
 		System.out.println("1. Go to Student Page"); 
-		System.out.println("2. Go to CCA Page"); 
+		System.out.println("2. Go to Parents Page"); 
 		System.out.println("3. View CCA Cordinator");
 		System.out.println("4. Log Out");
 	} 
