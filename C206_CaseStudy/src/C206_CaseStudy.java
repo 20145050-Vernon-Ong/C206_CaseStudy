@@ -12,6 +12,8 @@ public class C206_CaseStudy {
 	ArrayList<CCA> ccaList = new ArrayList<CCA>(); 
 	
 	ArrayList<ccaCategory> ccaCategoryList = new ArrayList<ccaCategory>();
+	
+	ArrayList<parents> parentList = new ArrayList<parents>();
 
 	public static void main(String[] args) { 
 		// TODO Auto-generated method stub 
@@ -74,7 +76,9 @@ public class C206_CaseStudy {
 					runSavingParentProcess(loginStud); 
 				} 
 			} else if (secondOption == 5) { 
-
+				
+			} else if (secondOption == 6) {
+				regParent();
 			} else if (secondOption == 7) { 
 
 			} else { 
@@ -150,7 +154,6 @@ public class C206_CaseStudy {
 		Helper.line(30, "=");
 		System.out.println("1. View CCA Category");
 		System.out.println("2. Add CCA Category"); 
-		System.out.println("3. Edit CCA Category"); 
 		System.out.println("4. Delete CCA Category"); 
 		System.out.println("5. Go to CCA Cordinator Menu");
 	}
@@ -162,6 +165,12 @@ public class C206_CaseStudy {
 		System.out.println("1. View CCA Detail Page");
 		System.out.println("2. View CCA Category Page"); 
 		System.out.println("3. Log Out");
+	}
+	
+	private static void regParentMenu() {
+		Helper.line(30, "="); 
+		System.out.println("Register Parent Page"); 
+		Helper.line(30, "=");
 	}
 
 
@@ -411,7 +420,7 @@ public class C206_CaseStudy {
 	private void categoryPage() {
 		int option = -1;
 		
-		while (option != 5) {
+		while (option != 4) {
 			ccaCategoryMenu();
 			option = Helper.readInt("Enter choice > ");
 			if (option == 1) {
@@ -419,10 +428,8 @@ public class C206_CaseStudy {
 			} else if (option == 2) {
 				addCCACategory();
 			} else if (option == 3) {
-				editCCACategory();
-			} else if (option == 4) {
 				deleteCCACategory();
-			} else if (option == 5) {
+			} else if (option == 4) {
 				cordinatorMainMenu();
 			} else {
 				System.out.println("Invalid Option");
@@ -447,8 +454,8 @@ public class C206_CaseStudy {
 			String addEmail = Helper.readString("Add Parent Email > "); 
 			int contact = Helper.readInt("Add Contact Number > ");
 			String cca = Helper.readString("Enter CCA Name > ");
-			studentList.add(new Student(addName, addStudentID, addGrade, classRoom,  
-					addParent, addEmail, contact, cca)); 
+			parentList.add(new parents(addParent, addEmail, contact, addName, addStudentID, addGrade, classRoom,  
+					 cca)); 
 		} else { 
 			System.out.println("Invalid Grade"); 
 		} 
@@ -458,17 +465,18 @@ public class C206_CaseStudy {
 	private void viewStudent() { 
 
 		String output = String.format("%-10s %-10s %-10s %s\n", "Name", "Student ID", "Grade", "Class Room"); 
-		for (Student s : studentList) { 
+		for (Student s : studentList) {
 			if (s.getGrade() >= 4 && s.getGrade() <= 6) { 
 				output += String.format("%-10s %-10d %-10d %s\n",  
 						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom()); 
-			} else if (s.getGrade() <= 3 && s.getGrade() >= 1) { 
+			}
+			for (parents p : parentList) {
 				output += String.format("%-10s %-10d %-10d %-10s %-10s %-10s %d\n",  
-						s.getName(), s.getStudentID(), s.getGrade(), s.getClassRoom(), 
-						s.getParentName(), s.getParentEmail(), s.getContactNo()); 
+						p.getName(), p.getStudentID(), p.getGrade(), p.getClassRoom(), 
+						p.getParentName(), p.getParentEmail(), p.getContactNo()); 
 			} 
+				
 		} 
-
 		System.out.println(output); 
 	} 
 
@@ -625,7 +633,16 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void editCCACategory() {
+	private void regParent() {
+		regParentMenu();
+		String regParentName = Helper.readString("Enter your name > ");
+		String regParentEmail = Helper.readString("Enter your email > ");
+		String regex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+		boolean matchEmail = Pattern.matches(regex, regParentEmail);
+		if (matchEmail == true) {
+			int contactNo = Helper.readInt("Enter contact number > ");
+			
+		}
 		
 	}
 

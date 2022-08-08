@@ -1,13 +1,13 @@
 
-public class parents extends CCA {
+public class parents extends Student {
 	
 	private String ParentName;
 	private String ParentEmail;
 	private int contactNo;
 
-	public parents(String title, String category, int classSize, String day, String time, String venue,
-			String instructor, String description, String ParentName, String ParentEmail, int contactNo) {
-		super(title, category, classSize, day, time, venue, instructor, description);
+	public parents(String ParentName, String ParentEmail, int contactNo, String name, int studentID,
+			int grade, String classRoom, String title) {
+		super(name, studentID, grade, classRoom, title);
 		this.ParentName = ParentName;
 		this.ParentEmail = ParentEmail;
 		this.contactNo = contactNo;
