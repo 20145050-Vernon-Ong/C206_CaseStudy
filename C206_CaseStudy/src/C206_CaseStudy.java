@@ -71,7 +71,7 @@ public class C206_CaseStudy {
 					runSavingStudentProcess(loginStud); 
 				} 
 			} else if (secondOption == 4) { 
-				Student loginStud = getParentAccount(studentList); 
+				parents loginStud = getParentAccount(parentList); 
 				if (loginStud != null) { 
 					runSavingParentProcess(loginStud); 
 				} 
@@ -216,7 +216,7 @@ public class C206_CaseStudy {
 		} 
 	} 
 
-	private void runSavingParentProcess(Student loginAccount) { 
+	private void runSavingParentProcess(parents loginAccount) { 
 		int memberOption = -1; 
 
 		while (memberOption != 4) { 
@@ -287,9 +287,9 @@ public class C206_CaseStudy {
 
 	} 
 	//parents to login 
-	private static Student getParentAccount(ArrayList<Student> studentList) { 
-		Student loginAccount = null; 
-		for (Student s : studentList) { 
+	private static parents getParentAccount(ArrayList<parents> parentList) { 
+		parents loginAccount = null; 
+		for (parents s : parentList) { 
 			String enterName = Helper.readString("Enter Name > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
 			if (s.login(enterName, enterID) == true) { 
