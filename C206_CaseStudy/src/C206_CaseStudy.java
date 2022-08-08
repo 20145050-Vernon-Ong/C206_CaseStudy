@@ -289,14 +289,14 @@ public class C206_CaseStudy {
 	//parents to login 
 	private static parents getParentAccount(ArrayList<parents> parentList) { 
 		parents loginAccount = null; 
-		for (parents s : parentList) { 
+		for (parents p : parentList) { 
 			String enterName = Helper.readString("Enter Name > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
-			if (s.login(enterName, enterID) == true) { 
-				loginAccount = s; 
+			if (p.login(enterName, enterID) == true) { 
+				loginAccount = p; 
 				ParentsMenu(); 
 				break;  
-			}else if (s.login(enterName, enterID) == false) { 
+			}else if (p.login(enterName, enterID) == false) { 
 				System.out.println("Name or ID entered is incorrect please login again !"); 
 			} 
 		} 
