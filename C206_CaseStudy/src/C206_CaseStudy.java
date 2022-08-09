@@ -25,8 +25,8 @@ public class C206_CaseStudy {
 		
 		adminList.add(new Admin("Vernon Ong", "verC206DIT"));
 		
-		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn"));
 		ccaCordinatorList.add(new ccaCordinator("Earnest", "Floorball", "earnest"));
+		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn"));
 		ccaCordinatorList.add(new ccaCordinator("Hew Rui", "Band", "rui"));
 		ccaCordinatorList.add(new ccaCordinator("Sachin", "SOI CLub", "sachin"));
 		
