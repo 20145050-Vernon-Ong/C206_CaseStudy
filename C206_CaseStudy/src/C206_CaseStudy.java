@@ -205,7 +205,9 @@ public class C206_CaseStudy {
 	private void runSavingStudentProcess(Student loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 2) { 
+		while (memberOption != 2) {
+			System.out.println("1. Register CCA");
+			System.out.println("2. Log Out");
 			memberOption = Helper.readInt("Enter choice > "); 
 			if (memberOption == 1) { 
 				regCCA();
