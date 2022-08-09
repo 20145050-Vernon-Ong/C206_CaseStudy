@@ -47,7 +47,7 @@ public class caseStudyTest {
 	Parent p1;
 	public caseStudyTest() {
 		p1= new Parent(21001234, "Pearlyn", 3, "E65H", "ohn", "ohn@gmail.com",87654321);
-		Student s1 = new Student("Amy", 210001234, 3, "E65H", "");
+		Student s1 = new Student("Amy", 210001234, 3, "E65H", "Miss Chan", "SOH Club", 0);
 		Admin a1 = new Admin("admin","admin");
 		ccaCoordinator c1 = new ccaCoordinator("annie","football","annie");
 		adminList.add(a1);
