@@ -396,7 +396,7 @@ public class C206_CaseStudy {
 			} else if (option == 2) {
 				viewAllCCACordinator();
 			} else if (option == 3) {
-				
+				deleteCordinator();
 			} else if (option == 4){ 
 				AdminMenu(); 
 			} else { 
@@ -639,6 +639,17 @@ public class C206_CaseStudy {
 		}
 		System.out.println(output);
 	} 
+	
+	private void deleteCordinator() {
+		String askName = Helper.readString("Enter CCA Cordinator Name > ");
+		String askCCA = Helper.readString("Enter CCA Assigned > ");
+		for (int i = 0; i < ccaCordinatorList.size(); i++) {
+			if (askName.equals(ccaCordinatorList.get(i).getInstructor()) && 
+					askCCA.equals(ccaCordinatorList.get(i).getCCAassigned())) {
+				ccaCordinatorList.remove(i);
+			}
+		}
+	}
 	
 	private void addCCACategory() {
 		String addCate = Helper.readString("Enter category > ");
