@@ -21,8 +21,8 @@ public class ccaCordinator extends CCA {
     	return password; 
     } 
     
-    public boolean login(String name, String password) { 
-    	if (name.equals(getInstructor()) && password.equals(getPassword())) { 
+    public boolean login(String instructor, String password) { 
+    	if (instructor.equals(getInstructor()) && password.equals(getPassword())) { 
     		return true; 
     	} else { 
     		return false; 
