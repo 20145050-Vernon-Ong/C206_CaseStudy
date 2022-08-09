@@ -31,7 +31,7 @@ public class C206_CaseStudyTest {
 	ArrayList<Admin> adminList = new ArrayList<Admin>();
 	ArrayList<Student> studentList = new ArrayList<Student>();
 	ArrayList<ccaCoordinator> CordinatorList = new ArrayList<ccaCoordinator>();
-	ArrayList<Parent> ParentList= new ArrayList<Parent>();
+	ArrayList<parents> parentList= new ArrayList<parents>();
 	Parent p1;
 	public void caseStudyTest() {
 		p1= new Parent(21001234, "Pearlyn", 3, "E65H", "ohn", "ohn@gmail.com",87654321);
@@ -39,7 +39,7 @@ public class C206_CaseStudyTest {
 		Admin a1 = new Admin("admin","admin");
 		ccaCoordinator c1 = new ccaCoordinator("annie","football","annie");
 		adminList.add(a1);
-		ParentList.add(p1);
+		parentList.add(p1);
 		studentList.add(s1);
 		CordinatorList.add(c1);
 		
@@ -49,7 +49,7 @@ public class C206_CaseStudyTest {
 		assertTrue(!adminList.isEmpty());
 		assertTrue(!CordinatorList.isEmpty());
 		assertTrue(!studentList.isEmpty());
-		assertTrue(!ParentList.isEmpty());
+		assertTrue(!parentList.isEmpty());
 	}
 	
 	
@@ -63,7 +63,7 @@ public class C206_CaseStudyTest {
 		//-----------------Test Success Login----------------------//
 		assertTrue(caseStudy.loginAdmin(adminList, "admin", "admin"));
 		assertTrue(caseStudy.loginCCAcoord(CordinatorList, "annie", "annie"));
-		assertTrue(caseStudy.loginParent(ParentList, p1.getRandomGenerate(), p1.getStudentID()));
+		assertTrue(caseStudy.loginParent(parentList, p1.getRandomGenerate(), p1.getStudentID()));
 		assertTrue(caseStudy.loginStudent(studentList,"Amy",210001234));
 		
 	
@@ -72,7 +72,7 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testregCCA() {
-		assertTrue(C206_CaseStudy.main());
+		assertTrue(C206_CaseStudy.deleteParent(parentList));
 	}
 
 }

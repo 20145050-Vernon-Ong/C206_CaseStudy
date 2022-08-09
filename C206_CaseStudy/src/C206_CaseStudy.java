@@ -210,7 +210,7 @@ public class C206_CaseStudy {
 			System.out.println("2. Log Out");
 			memberOption = Helper.readInt("Enter choice > "); 
 			if (memberOption == 1) { 
-				regCCA();
+				regCCA(studentList);
 			} else if (memberOption == 2) {
 				System.out.println("Logging Out."); 
 			} else { 
@@ -370,7 +370,7 @@ public class C206_CaseStudy {
 			if (option == 1) { 
 				viewParent();
 			} else if (option == 2) {
-				deleteParent();
+				deleteParent(parentList);
 			} else if (option == 3){ 
 				AdminMenu(); 
 			} else { 
@@ -702,7 +702,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-	public void deleteParent() {
+	public static void deleteParent(ArrayList<parents> parentList) {
 		String askName = Helper.readString("Enter Parent Name > ");
 		String askEmail = Helper.readString("Enter Paretn Email > ");
 		for (int i = 0; i < parentList.size(); i++) {
@@ -712,7 +712,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	public void regCCA() {
+	public static  void regCCA(ArrayList<Student> studentList) {
 		String name = Helper.readString("Enter name > ");
 		int grade = Helper.readInt("Enter grade > ");
 		String CLASS = Helper.readString("Enter classroom > ");
