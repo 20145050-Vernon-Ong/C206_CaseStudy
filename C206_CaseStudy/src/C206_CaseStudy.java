@@ -272,6 +272,9 @@ public class C206_CaseStudy {
 	private static Student getStudAccount(ArrayList<Student> studentList) { 
 		Student loginAccount = null; 
 		for (Student s : studentList) { 
+			Helper.line(50, "=");
+			System.out.println("LOGIN AS STUDENT");
+			Helper.line(50, "=");
 			String enterName = Helper.readString("Enter Name > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
 			if (s.login(enterName, enterID) == true) { 
@@ -288,7 +291,10 @@ public class C206_CaseStudy {
 	//parents to login 
 	private static parents getParentAccount(ArrayList<parents> parentList) { 
 		parents loginAccount = null; 
-		for (parents p : parentList) { 
+		for (parents p : parentList) {
+			Helper.line(50, "=");
+			System.out.println("LOGIN AS PARENTS");
+			Helper.line(50, "=");
 			String enterName = Helper.readString("Enter Name > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
 			if (p.login(enterName, enterID) == true) { 
@@ -306,7 +312,10 @@ public class C206_CaseStudy {
 
 	private static ccaCordinator getCCACordinatorAccount(ArrayList<ccaCordinator> ccaCordinatorList) { 
 		ccaCordinator loginAccount = null; 
-		for (ccaCordinator c : ccaCordinatorList) { 
+		for (ccaCordinator c : ccaCordinatorList) {
+			Helper.line(50, "=");
+			System.out.println("LOGIN AS CCA CORDINATOR");
+			Helper.line(50, "=");
 			String enterName = Helper.readString("Enter Name > "); 
 			String password = Helper.readString("Enter password > "); 
 			if (c.login(enterName, password) == true) { 
