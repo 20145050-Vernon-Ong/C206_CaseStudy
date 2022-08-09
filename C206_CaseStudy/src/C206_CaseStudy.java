@@ -368,9 +368,9 @@ public class C206_CaseStudy {
 			System.out.println("3. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
 			if (option == 1) { 
-				
+				viewParent();
 			} else if (option == 2) {
-				
+				deleteParent();
 			} else if (option == 3){ 
 				AdminMenu(); 
 			} else { 
@@ -680,6 +680,27 @@ public class C206_CaseStudy {
 					studentID, studentG, classRoom, teacher));
 		}
 		
+	}
+	
+	private void viewParent() {
+		String output = String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
+				"Parent Name", "Parent Email", "Contact Number", "Child Name", "Student ID", "Grade", "Classroom", "Teacher");
+		for (parents p : parentList) {
+			output += String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
+					p.getParentName(), p.getParentEmail(), p.getContactNo(), p.getName(), p.getStudentID(), p.getGrade(),
+					p.getClassRoom(), p.getTeacher());
+		}
+		System.out.println(output);
+	}
+	
+	private void deleteParent() {
+		String askName = Helper.readString("Enter Parent Name > ");
+		String askEmail = Helper.readString("Enter Paretn Email > ");
+		for (int i = 0; i < parentList.size(); i++) {
+			if (askName.equals(parentList.get(i).getParentName()) && askEmail.equals(parentList.get(i).getParentEmail())) {
+				parentList.remove(i);
+			}
+		}
 	}
 
 }
