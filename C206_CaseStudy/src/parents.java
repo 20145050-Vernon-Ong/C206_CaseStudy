@@ -39,7 +39,7 @@ public class parents extends Student {
 	}
 	
 	public boolean login(String ParentName, int ID) {
-		if (ParentName.equals(getName()) && ID == getStudentID()) {
+		if (ParentName.equals(getParentName()) && ID == getStudentID()) {
 			return true;
 		} else {
 			return false;
