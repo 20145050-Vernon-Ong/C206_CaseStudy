@@ -6,7 +6,6 @@ public class Student extends CCA{
 	private int grade;
 	private String classRoom;
 	private int contactNo;
-	private int registerationID;
 	private String teacher;
 	
 	// P4 and Above
