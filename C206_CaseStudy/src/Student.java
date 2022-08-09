@@ -9,9 +9,12 @@ public class Student extends CCA{
 	private int contactNo;
 	private String teacher;
 	private int registerationID;
+	private int ccaperWeek;
+	private int ccaperDay;
 	
 	// P4 and Above
-	public Student(String name, int studentID, int grade, String classRoom, String Teacher, String title, int registerationID) {
+	public Student(String name, int studentID, int grade, String classRoom, String Teacher, String title, int registerationID,
+			int ccaperWeek, int ccaperDay) {
 		super(title);
 		this.name = name;
 		this.studentID = studentID;
@@ -19,6 +22,8 @@ public class Student extends CCA{
 		this.classRoom = classRoom;
 		this.teacher = Teacher;
 		this.registerationID = randomGenerate();
+		this.ccaperDay = ccaperDay;
+		this.ccaperWeek = ccaperWeek;
 	}
 	
 	public Student(String name, int studentID, int grade, String classRoom, String Teacher, int registerationID) {
@@ -28,6 +33,14 @@ public class Student extends CCA{
 		this.classRoom = classRoom;
 		this.teacher = Teacher;
 		this.registerationID = randomGenerate();
+	}
+
+	public int getCcaperWeek() {
+		return ccaperWeek;
+	}
+
+	public int getCcaperDay() {
+		return ccaperDay;
 	}
 
 	public String getName() {
