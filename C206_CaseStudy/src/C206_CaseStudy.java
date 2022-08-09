@@ -39,6 +39,10 @@ public class C206_CaseStudy {
 		
 		parentList.add(new parents("Dave Lee", "dave123@gmail.com", 83214566, "Samuel Lee", 12345, 2, "C206", "Mr Low"));
 		
+		ccaCategoryList.add(new ccaCategory("Sports"));
+		ccaCategoryList.add(new ccaCategory("Clubs & Societies"));
+		ccaCategoryList.add(new ccaCategory("Performing Arts"));
+		
 		int option = -1; 
 		while (option != 2) { 
 			LoginMenu(); 
