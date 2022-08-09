@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Student extends CCA{
 	
@@ -7,24 +8,26 @@ public class Student extends CCA{
 	private String classRoom;
 	private int contactNo;
 	private String teacher;
+	private int registerationID;
 	
 	// P4 and Above
-	public Student(String name, int studentID, int grade, String classRoom, String Teacher, String title) {
+	public Student(String name, int studentID, int grade, String classRoom, String Teacher, String title, int registerationID) {
 		super(title);
 		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
 		this.classRoom = classRoom;
 		this.teacher = Teacher;
-		
+		this.registerationID = randomGenerate();
 	}
 	
-	public Student(String name, int studentID, int grade, String classRoom, String Teacher) {
+	public Student(String name, int studentID, int grade, String classRoom, String Teacher, int registerationID) {
 		this.name = name;
 		this.studentID = studentID;
 		this.grade = grade;
 		this.classRoom = classRoom;
 		this.teacher = Teacher;
+		this.registerationID = randomGenerate();
 	}
 
 	public String getName() {
@@ -33,6 +36,10 @@ public class Student extends CCA{
 
 	public int getStudentID() {
 		return studentID;
+	}
+	
+	public int getRegisterationID() {
+		return registerationID;
 	}
 	
 	public int getGrade() {
@@ -51,16 +58,28 @@ public class Student extends CCA{
 		return contactNo;
 	}
 	
-	public void setContactNo(int contactNo) {
-		this.contactNo = contactNo;
+	public void setRegisterationID(int registerationID) {
+		this.registerationID = randomGenerate();
 	}
 	
-	public boolean login(String name, int ID) {
-		if (name.equals(getName()) && ID == getStudentID()) {
+	public boolean login(int registerationID, int ID) {
+		if (registerationID == randomGenerate() && ID == getStudentID()) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	private int randomGenerate() {
+		int max = 10;
+		String srandomGen ="";
+		int randoGen = 0;
+		Random rand = new Random();
+		for (int i =0; i < 5; i ++) {
+			srandomGen += String.valueOf(rand.nextInt(max));
+		}
+		randoGen = Integer.parseInt(srandomGen);
+		return randoGen;
 	}
 	
 }

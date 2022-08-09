@@ -37,7 +37,7 @@ public class C206_CaseStudy {
 		ccaList.add(new CCA("Archery", "Sports", 40, "Friday", "5.00-8.00", "Soccer Field",
 				"George Lim", "Achery is about using Bow and Arrows"));
 		
-		parentList.add(new parents("Dave Lee", "dave123@gmail.com", 83214566, "Samuel Lee", 12345, 2, "C206", "Mr Low"));
+		parentList.add(new parents("Dave Lee", "dave123@gmail.com", 83214566, "Samuel Lee", 12345, 2, "C206", "Mr Low", 0));
 		
 		ccaCategoryList.add(new ccaCategory("Sports"));
 		ccaCategoryList.add(new ccaCategory("Clubs & Societies"));
@@ -208,7 +208,7 @@ public class C206_CaseStudy {
 		while (memberOption != 4) { 
 			memberOption = Helper.readInt("Enter choice > "); 
 			if (memberOption == 1) { 
-
+				
 			} else if (memberOption == 2) { 
 
 
@@ -279,14 +279,14 @@ public class C206_CaseStudy {
 			Helper.line(50, "=");
 			System.out.println("LOGIN AS STUDENT");
 			Helper.line(50, "=");
-			String enterName = Helper.readString("Enter Name > "); 
+			int enterRegID = Helper.readInt("Enter CCA Registration ID > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
-			if (s.login(enterName, enterID) == true) { 
+			if (s.login(enterRegID, enterID) == true) { 
 				loginAccount = s; 
 				StudentMenu(); 
 				break;  
-			}else if (s.login(enterName, enterID) == false) { 
-				System.out.println("Name or ID entered is incorrect please login again !"); 
+			}else if (s.login(enterRegID, enterID) == false) { 
+				System.out.println("CCA Registeration ID or ID entered is incorrect please login again !"); 
 			} 
 		} 
 		return loginAccount; 
@@ -299,15 +299,15 @@ public class C206_CaseStudy {
 			Helper.line(50, "=");
 			System.out.println("LOGIN AS PARENTS");
 			Helper.line(50, "=");
-			String enterName = Helper.readString("Enter Name > "); 
+			int enterRegID = Helper.readInt("Enter Registeration ID > "); 
 			int enterID = Helper.readInt("Enter Student ID > "); 
-			if (p.login(enterName, enterID) == true) { 
+			if (p.login(enterRegID, enterID) == true) { 
 				loginAccount = p; 
 				System.out.println("1. Go to Register CCA Page");
 				System.out.println("2. Log Out"); 
 				break;  
-			}else if (p.login(enterName, enterID) == false) { 
-				System.out.println("Name or ID entered is incorrect please login again !"); 
+			}else if (p.login(enterRegID, enterID) == false) { 
+				System.out.println("CCA Registeration ID or ID entered is incorrect please login again !"); 
 			} 
 		} 
 		return loginAccount; 
@@ -479,17 +479,11 @@ public class C206_CaseStudy {
 			int addStudentID = Helper.readInt("Add Student ID > "); 
 			String classRoom = Helper.readString("Add ClassRoom > ");
 			String cca = Helper.readString("Enter CCA Name > ");
-			studentList.add(new Student(addName, addStudentID, addGrade, classRoom, cca)); 
-		} else if (addGrade <= 3 && addGrade >= 1) { 
-			String addName = Helper.readString("Add Student Name > "); 
-			int addStudentID = Helper.readInt("Add Student ID > "); 
-			String classRoom = Helper.readString("Add ClassRoom > "); 
-			String addParent = Helper.readString("Add Parent Name > "); 
-			String addEmail = Helper.readString("Add Parent Email > "); 
-			int contact = Helper.readInt("Add Contact Number > ");
-			String cca = Helper.readString("Enter CCA Name > ");
-			parentList.add(new parents(addParent, addEmail, contact, addName, addStudentID, addGrade, classRoom,  
-					 cca)); 
+			for (Student s : studentList) {
+				studentList.add(new Student(addName, addStudentID, addGrade, classRoom, cca, s.getRegisterationID()));
+				System.out.println("CCA Registration ID is " + s.getRegisterationID());
+				break;
+			}
 		} else { 
 			System.out.println("Invalid Grade"); 
 		} 
@@ -691,8 +685,12 @@ public class C206_CaseStudy {
 			int studentG = Helper.readInt("Enter student grade > ");
 			String classRoom = Helper.readString("Enter class room > ");
 			String teacher = Helper.readString("Enter class room teacher > ");
-			parentList.add(new parents(regParentName, regParentEmail, contactNo, childName,
-					studentID, studentG, classRoom, teacher));
+			for (parents p : parentList) {
+				parentList.add(new parents(regParentName, regParentEmail, contactNo, childName,
+					studentID, studentG, classRoom, teacher, p.getRegisterationID()));
+				System.out.println("CCA Registration ID is " + p.getRegisterationID());
+				break;
+			}
 		}
 		
 	}

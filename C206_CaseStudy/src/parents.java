@@ -8,8 +8,8 @@ public class parents extends Student {
 	private int registerationID;
 
 	public parents(String ParentName, String ParentEmail, int contactNo, String name, int studentID,
-			int grade, String classRoom, String Teacher) {
-		super(name, studentID, grade, classRoom, Teacher);
+			int grade, String classRoom, String Teacher, int registerationID) {
+		super(name, studentID, grade, classRoom, Teacher, registerationID);
 		this.ParentName = ParentName;
 		this.ParentEmail = ParentEmail;
 		this.contactNo = contactNo;
@@ -46,11 +46,11 @@ public class parents extends Student {
 	}
 
 	public void setRegisterationID(int registerationID) {
-		this.registerationID = registerationID;
+		this.registerationID = randomGenerate();
 	}
 
-	public boolean login(String ParentName, int ID) {
-		if (ParentName.equals(getParentName()) && ID == getStudentID()) {
+	public boolean login(int registerationID, int ID) {
+		if (registerationID == randomGenerate() && ID == getStudentID()) {
 			return true;
 		} else {
 			return false;
@@ -64,6 +64,7 @@ public class parents extends Student {
 		Random rand = new Random();
 		for (int i =0; i < 5; i ++) {
 			srandomGen += String.valueOf(rand.nextInt(max));
+			break;
 		}
 		randoGen = Integer.parseInt(srandomGen);
 		return randoGen;
