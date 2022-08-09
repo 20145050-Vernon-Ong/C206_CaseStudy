@@ -21,7 +21,8 @@ public class C206_CaseStudy {
 		starting.start(); 
 	}
 
-	private void start() { 
+	private void start() {
+		
 		adminList.add(new Admin("Vernon Ong", "verC206DIT"));
 		
 		ccaCordinatorList.add(new ccaCordinator("Pearlyn", "Muay Thai", "pearlyn"));
@@ -35,6 +36,8 @@ public class C206_CaseStudy {
 				"David Ng", "BasketBall is a 10 player game"));
 		ccaList.add(new CCA("Archery", "Sports", 40, "Friday", "5.00-8.00", "Soccer Field",
 				"George Lim", "Achery is about using Bow and Arrows"));
+		
+		parentList.add(new parents("Dave Lee", "dave123@gmail.com", 83214566, "Samuel Lee", 12345, 2, "C206", "Mr Low"));
 		
 		int option = -1; 
 		while (option != 2) { 
