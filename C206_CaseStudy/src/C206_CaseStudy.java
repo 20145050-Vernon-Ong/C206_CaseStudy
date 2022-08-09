@@ -330,7 +330,7 @@ public class C206_CaseStudy {
 	} 
 
 	// Student Section
-	private void StudentPage() {
+	public void StudentPage() {
 		int option = -1; 
 
 		while (option != 4) { 
@@ -356,7 +356,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void ParentsPage() {
+	public void ParentsPage() {
 		int option = -1; 
 
 		while (option != 4) { 
@@ -379,7 +379,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void CCACordinatorPage() {
+	public void CCACordinatorPage() {
 		int option = -1; 
 
 		while (option != 4) { 
@@ -405,7 +405,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void cordinatorPage() {
+	public void cordinatorPage() {
 		int memberOption = -1;
 		while (memberOption != 5) {
 			ccaCordinatorMenu();
@@ -426,7 +426,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void categoryPage() {
+	public void categoryPage() {
 		int option = -1;
 		
 		while (option != 4) {
@@ -446,7 +446,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void regforCCAPage() {
+	public void regforCCAPage() {
 		int option = -1;
 		
 		while (option != 4) {
@@ -467,7 +467,7 @@ public class C206_CaseStudy {
 		}
 	}
 
-	private void RegisterStudent() {  
+	public void RegisterStudent() {  
 		int addGrade = Helper.readInt("Add Grade >"); 
 
 		if (addGrade >= 4 && addGrade <= 6) { 
@@ -486,7 +486,7 @@ public class C206_CaseStudy {
 
 	} 
 
-	private void viewStudent() { 
+	public void viewStudent() { 
 
 		String output = String.format("%-10s %-10s %-10s %s\n", "Name", "Student ID", "Grade", "Class Room"); 
 		for (Student s : studentList) {
@@ -504,7 +504,7 @@ public class C206_CaseStudy {
 		System.out.println(output); 
 	} 
 
-	private void deleteStudent() { 
+	public void deleteStudent() { 
 		int delStudentID = Helper.readInt("Enter Student ID > ");
 		for (Student s : studentList) {
 			if (delStudentID == s.getStudentID()) {
@@ -514,7 +514,7 @@ public class C206_CaseStudy {
 	} 
 
 	// CCA Section 
-	private void viewCCADetails() {
+	public void viewCCADetails() {
 		Helper.line(50, "=");
 		System.out.println("View CCA DETAILS");
 		Helper.line(50, "=");
@@ -531,7 +531,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 
-	private void addCCADetails() {
+	public void addCCADetails() {
 		Helper.line(50, "=");
 		System.out.println("ADD CCA DETAILS");
 		Helper.line(50, "=");
@@ -556,7 +556,7 @@ public class C206_CaseStudy {
 		}
 	}
 
-	private void editCCADetails() {
+	public void editCCADetails() {
 		Helper.line(50, "=");
 		System.out.println("Edit CCA DETAILS");
 		Helper.line(50, "=");
@@ -597,7 +597,7 @@ public class C206_CaseStudy {
 		}
 	}
 
-	private void deleteCCADetails() {
+	public void deleteCCADetails() {
 		Helper.line(50, "=");
 		System.out.println("Delete CCA DETAILS");
 		Helper.line(50, "=");
@@ -612,7 +612,7 @@ public class C206_CaseStudy {
 	}
 
 	//CCA Cordinator Section
-	private void addCCACordinator() {
+	public void addCCACordinator() {
 		Helper.line(50, "=");
 		System.out.println("ADD CCA CORDINATOR");
 		Helper.line(50, "=");
@@ -623,7 +623,7 @@ public class C206_CaseStudy {
 	}
 	
 	
-	private void viewAllCCACordinator() {
+	public void viewAllCCACordinator() {
 		Helper.line(50, "=");
 		System.out.println("VIEW ALL CCA CORDINATOR");
 		Helper.line(50, "=");
@@ -634,7 +634,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	} 
 	
-	private void deleteCordinator() {
+	public void deleteCordinator() {
 		String askName = Helper.readString("Enter CCA Cordinator Name > ");
 		String askCCA = Helper.readString("Enter CCA Assigned > ");
 		for (int i = 0; i < ccaCordinatorList.size(); i++) {
@@ -645,12 +645,12 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void addCCACategory() {
+	public void addCCACategory() {
 		String addCate = Helper.readString("Enter category > ");
 		ccaCategoryList.add(new ccaCategory(addCate));
 	}
 	
-	private void viewCCACategory() {
+	public void viewCCACategory() {
 		String output = String.format("%-10s\n", "CATEGORY");
 		for (ccaCategory c : ccaCategoryList) {
 			output += String.format("%-10s\n", c.getCategory());
@@ -659,7 +659,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-	private void deleteCCACategory() {
+	public void deleteCCACategory() {
 		String delCate = Helper.readString("Enter category > ");
 		for (int i = 0; i < ccaCategoryList.size(); i++) {
 			if (ccaCategoryList.get(i).getCategory().equals(delCate)) {
@@ -668,7 +668,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void regParent() {
+	public void regParent() {
 		regParentMenu();
 		String regParentName = Helper.readString("Enter your name > ");
 		String regParentEmail = Helper.readString("Enter your email > ");
@@ -691,7 +691,7 @@ public class C206_CaseStudy {
 		
 	}
 	
-	private void viewParent() {
+	public void viewParent() {
 		String output = String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
 				"Parent Name", "Parent Email", "Contact Number", "Child Name", "Student ID", "Grade", "Classroom", "Teacher");
 		for (parents p : parentList) {
@@ -702,7 +702,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-	private void deleteParent() {
+	public void deleteParent() {
 		String askName = Helper.readString("Enter Parent Name > ");
 		String askEmail = Helper.readString("Enter Paretn Email > ");
 		for (int i = 0; i < parentList.size(); i++) {
@@ -712,7 +712,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	private void regCCA() {
+	public void regCCA() {
 		String name = Helper.readString("Enter name > ");
 		int grade = Helper.readInt("Enter grade > ");
 		String CLASS = Helper.readString("Enter classroom > ");

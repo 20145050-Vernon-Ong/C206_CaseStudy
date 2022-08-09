@@ -69,5 +69,10 @@ public class C206_CaseStudyTest {
 	
 		
 	}
+	
+	@Test
+	public void testregCCA() {
+		assertTrue(C206_CaseStudy.main());
+	}
 
 }
