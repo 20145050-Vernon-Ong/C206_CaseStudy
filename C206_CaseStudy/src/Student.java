@@ -43,6 +43,14 @@ public class Student extends CCA{
 		return ccaperDay;
 	}
 
+	public void setCcaperWeek(int ccaperWeek) {
+		this.ccaperWeek = ccaperWeek;
+	}
+
+	public void setCcaperDay(int ccaperDay) {
+		this.ccaperDay = ccaperDay;
+	}
+
 	public String getName() {
 		return name;
 	}

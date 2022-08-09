@@ -715,5 +715,28 @@ public class C206_CaseStudy {
 			}
 		}
 	}
+	
+	private void regCCA() {
+		String name = Helper.readString("Enter name > ");
+		int grade = Helper.readInt("Enter grade > ");
+		String CLASS = Helper.readString("Enter classroom > ");
+		
+		for (Student s : studentList) {
+			if (name.equals(s.getName()) && (grade >= 4 && grade <= 6) && CLASS.equals(s.getClassRoom())) {
+				int ccaweek = Helper.readInt("Enter how many cca per week > ");
+				if (ccaweek > 0 && ccaweek < 4) {
+					int ccaday = Helper.readInt("Enter how many cca per day > ");
+					if (ccaday > 2 && ccaday < 0) {
+						System.out.println("Only can take 2 cca per day");
+					} else {
+						s.setCcaperDay(ccaday);
+						s.setCcaperWeek(ccaweek);
+					}
+				} else {
+					System.out.println("Only can take 3 cca per week");
+				}
+			}
+		}
+	}
 
 }
