@@ -85,7 +85,7 @@ public class C206_CaseStudy {
 			} else if (secondOption == 5) { 
 				
 			} else if (secondOption == 6) {
-				regParent();
+				regParent(parentList);
 			} else if (secondOption == 7) { 
 
 			} else { 
@@ -668,7 +668,7 @@ public class C206_CaseStudy {
 		}
 	}
 	
-	public void regParent() {
+	public static void regParent(ArrayList<parents> parentList) {
 		regParentMenu();
 		String regParentName = Helper.readString("Enter your name > ");
 		String regParentEmail = Helper.readString("Enter your email > ");

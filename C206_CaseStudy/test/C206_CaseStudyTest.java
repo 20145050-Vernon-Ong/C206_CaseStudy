@@ -71,9 +71,10 @@ public class C206_CaseStudyTest {
 	}
 	
 	@Test
-	public void testregCCA() {
+	public void test() {
 		assertTrue(C206_CaseStudy.deleteParent(parentList));
 		assertTrue(C206_CaseStudy.regCCA(studentList));
+		assertTrue(C206_CaseStudy.regParent(parentList));
 	}
 
 }
