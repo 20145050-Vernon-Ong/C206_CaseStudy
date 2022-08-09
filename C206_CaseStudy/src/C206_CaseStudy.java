@@ -161,8 +161,8 @@ public class C206_CaseStudy {
 		Helper.line(30, "=");
 		System.out.println("1. View CCA Category");
 		System.out.println("2. Add CCA Category"); 
-		System.out.println("4. Delete CCA Category"); 
-		System.out.println("5. Go to CCA Cordinator Menu");
+		System.out.println("3. Delete CCA Category"); 
+		System.out.println("4. Go to CCA Cordinator Menu");
 	}
 	
 	private static void cordinatorMainMenu() {
