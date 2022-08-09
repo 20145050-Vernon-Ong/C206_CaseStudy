@@ -38,8 +38,8 @@ public class parents extends Student {
 		this.contactNo = contactNo;
 	}
 	
-	public boolean login(String name, int ID) {
-		if (name.equals(getName()) && ID == getStudentID()) {
+	public boolean login(String ParentName, int ID) {
+		if (ParentName.equals(getName()) && ID == getStudentID()) {
 			return true;
 		} else {
 			return false;

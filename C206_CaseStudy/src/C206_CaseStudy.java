@@ -222,16 +222,12 @@ public class C206_CaseStudy {
 	private void runSavingParentProcess(parents loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 4) { 
+		while (memberOption != 2) { 
 			memberOption = Helper.readInt("Enter choice > "); 
 			if (memberOption == 1) { 
-
+				regforCCAPage();
 			} else if (memberOption == 2) { 
-
-			} else if (memberOption == 3) { 
-
-			} else if (memberOption == 4) { 
-				System.out.println("Logging Out"); 
+				System.out.println("Logging Out");
 			} else { 
 				System.out.println("Invalid Option"); 
 			} 
@@ -434,6 +430,26 @@ public class C206_CaseStudy {
 				deleteCCACategory();
 			} else if (option == 4) {
 				cordinatorMainMenu();
+			} else {
+				System.out.println("Invalid Option");
+			}
+		}
+	}
+	
+	private void regforCCAPage() {
+		int option = -1;
+		
+		while (option != 4) {
+			ParentsMenu();
+			option = Helper.readInt("Enter choice > ");
+			if (option == 1) {
+				viewStudent();
+			} else if (option == 2) {
+				RegisterStudent();
+			} else if (option == 3) {
+				viewCCADetails();
+			} else if (option == 4) {
+				ASPMenu();
 			} else {
 				System.out.println("Invalid Option");
 			}
