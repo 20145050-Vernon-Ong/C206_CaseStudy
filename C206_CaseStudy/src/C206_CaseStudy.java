@@ -222,7 +222,7 @@ public class C206_CaseStudy {
 	private void runSavingParentProcess(parents loginAccount) { 
 		int memberOption = -1; 
 
-		while (memberOption != 2) { 
+		while (memberOption != 2) {
 			memberOption = Helper.readInt("Enter choice > "); 
 			if (memberOption == 1) { 
 				regforCCAPage();
@@ -293,7 +293,8 @@ public class C206_CaseStudy {
 			int enterID = Helper.readInt("Enter Student ID > "); 
 			if (p.login(enterName, enterID) == true) { 
 				loginAccount = p; 
-				ParentsMenu(); 
+				System.out.println("1. Go to Register CCA Page");
+				System.out.println("2. Log Out"); 
 				break;  
 			}else if (p.login(enterName, enterID) == false) { 
 				System.out.println("Name or ID entered is incorrect please login again !"); 
@@ -449,7 +450,8 @@ public class C206_CaseStudy {
 			} else if (option == 3) {
 				viewCCADetails();
 			} else if (option == 4) {
-				ASPMenu();
+				System.out.println("1. Go to Register CCA Page");
+				System.out.println("2. Log Out"); 
 			} else {
 				System.out.println("Invalid Option");
 			}
