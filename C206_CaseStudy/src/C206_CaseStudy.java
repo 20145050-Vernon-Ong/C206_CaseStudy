@@ -368,7 +368,7 @@ public class C206_CaseStudy {
 			System.out.println("3. Go to Main Page"); 
 			option = Helper.readInt("Enter option > "); 
 			if (option == 1) { 
-				viewParent();
+				viewParent(parentList);
 			} else if (option == 2) {
 				deleteParent(parentList);
 			} else if (option == 3){ 
@@ -691,7 +691,7 @@ public class C206_CaseStudy {
 		
 	}
 	
-	public void viewParent() {
+	public void viewParent(ArrayList<parents> parentList) {
 		String output = String.format("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %s\n", 
 				"Parent Name", "Parent Email", "Contact Number", "Child Name", "Student ID", "Grade", "Classroom", "Teacher");
 		for (parents p : parentList) {
